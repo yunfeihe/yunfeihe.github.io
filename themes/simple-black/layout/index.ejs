@@ -1,0 +1,26 @@
+
+<!-- <%-partial('partials/recent-posts')%>
+<%-paginator()%> -->
+<% page.posts.each(function (post) { %>
+    <article class="posts">
+        <header class="entry-header">
+            <h1 class="entry-title">
+                <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+            </h1>
+            <div class="entry-meta">
+                <!-- <span class="post-category"><a href="#"><%- post.categories %></a></span> -->
+                <span class="post-date"><a href="#"><time class="entry-date"><%- date(page.date, "YYYY-MM-DD") %></time></a></span>
+                <span class="post-author"><a href="#"><%- config.author %></a></span>
+            </div>
+
+        </header>
+        <div class="entry-content clearfix">
+            <%- post.excerpt %>
+            <div class="read-more cl-effect-14">
+                <a href="<%- post.path %>" class="more-link"><%= __('index.more') %> <span class="meta-nav">→</span></a>
+            </div>
+        </div>
+    </article>
+<% }) %>
+
+<%-partial('partials/pagination')%>

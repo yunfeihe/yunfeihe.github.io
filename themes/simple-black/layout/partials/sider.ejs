@@ -1,0 +1,28 @@
+<aside class="col-md-4">
+
+    <div class="widget widget-archives">
+        <h3 class="widget-title"><%= __('index.archives') %></h3>
+        <%- list_archives({
+        show_count:false,
+        format:"YYYY MMMM"
+        }) %>
+    </div>
+
+    <div class="widget widget-category">
+        <h3 class="widget-title"><%= __('index.category') %></h3>
+        <%- list_categories({
+        show_count:false,
+        }) %>
+    </div>
+
+    <div class="widget widget-tag-cloud">
+        <h3 class="widget-title"><%= __('index.tags') %></h3>
+        <%- list_tags({
+        show_count:false,
+        }) %>
+    </div>
+
+    <!-- <div class="rss">
+        <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+    </div> -->
+</aside>

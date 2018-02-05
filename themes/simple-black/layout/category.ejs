@@ -1,0 +1,13 @@
+<% page.posts.each(function (post) { %>
+    <article class="post">
+        <header class="entry-header">
+            <h1 class="date"><%- page.category %></h1>
+
+            <h2 class="entry-title">
+                <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+            </h2>
+        </header>
+    </article>
+<% }) %>
+
+<%-partial('partials/pagination')%>
