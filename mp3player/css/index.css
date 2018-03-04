@@ -44,6 +44,7 @@ body {
   letter-spacing: -4px;
 }
 .wrap .title-artist {
+  max-width: 248px;
   float: left;
   line-height: 34.5px;
   margin-top: 35px;
