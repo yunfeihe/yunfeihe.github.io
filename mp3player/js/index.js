@@ -92,7 +92,7 @@ let bindings = function(){
             {
                 album: "http://pic.xiami.net/images/album/img99/699/4230621297501617.jpg",
                 artist: "吕方",
-                url: "demo.mp3",
+                url: "./demo.mp3",
                 title: "被遗忘的时光",
             }
         );
