@@ -64,7 +64,7 @@ body {
 }
 .wrap .control .progress-bar #id-div-fill {
   height: inherit;
-  width: 10%;
+  width: 0%;
   background-color: #ffa895;
   transition: width 1s;
 }
