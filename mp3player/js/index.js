@@ -90,10 +90,10 @@ let bindings = function(){
     bind(playBtn, "click", (e) => {
         player.play(
             {
-                album: "http://pic.xiami.net/images/album/img99/699/4230621297501617.jpg",
-                artist: "吕方",
+                album: "http://pic.xiami.net/images/album/img7/58507/3599371470901228.jpg",
+                artist: "Pianoboy",
                 url: "./demo.mp3",
-                title: "被遗忘的时光",
+                title: "The Truth That You Leave",
             }
         );
     });
