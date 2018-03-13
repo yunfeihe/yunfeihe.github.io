@@ -186,8 +186,8 @@
             var wrap = document.querySelector(".wrap");
             var currentIndex = 0;
             var lightIconByIndex = lightIconByIndexFunction();
-            var length = images.length;
-            
+            var maxIndex = images.length - 1;
+            var minIndex = 0;
             wrap.addEventListener("click", function (e) {
                 var target = e.target;
 
@@ -198,10 +198,11 @@
                 if (target.className.includes("controler")) {
                     var type = target.className;
                     if (type.includes("forward")) {
-                        log("back");
-                        currentIndex < images.length - 1 ? currentIndex++ : null; //索引从0开始,images.length从1开始
+                        currentIndex == maxIndex ? currentIndex = minIndex : currentIndex++; //索引从0开始,images.length从1开始
                     } else if (type.includes("back")) {
-                        currentIndex > 0 ? currentIndex-- : null;
+                        
+                        currentIndex == minIndex ? currentIndex = maxIndex : currentIndex--;
+                        log("back", currentIndex);
                     }
                 }
 
