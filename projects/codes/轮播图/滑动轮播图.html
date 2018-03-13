@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .wrap {
+            margin: 100px auto;
+            height: 400px;
+            width: 500px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* init */
+
+        .wrap-outer {
+            width: 500px;
+            height: 400px;
+            border: 1px solid grey;
+            overflow: hidden;
+        }
+
+        ul {
+            display: block;
+            width: max-content;
+            height: 400px;
+        }
+
+        li {
+            display: inline-block;
+            font-size: 0;
+            float: left;
+        }
+
+        li img {
+            display: block;
+            transition: 1s;
+            width: 500px;
+            height: 400px;
+        }
+
+        #id-btn-back,
+        #id-btn-forward {
+            position: relative;
+            height: 50px;
+            width: 50px;
+            opacity: 0.5;
+            border: none;
+            outline: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        #id-btn-back {
+            bottom: 231px;
+        }
+
+        #id-btn-forward {
+            bottom: 231px;
+            left: 397px;
+        }
+
+        #id-btn-back:hover,
+        #id-btn-forward:hover {
+            opacity: 0.8;
+        }
+
+        /* main */
+
+        #id-div-icons {
+            text-align: center;
+            line-height: 20px;
+            position: relative;
+            bottom: 100px;
+            word-spacing: 20px;
+        }
+
+        .index-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid white;
+            box-shadow: 0 0 10px 5px white;
+            box-sizing: border-box;
+            color: white;
+            transition: 0.5s;
+            user-select: none;
+        }
+
+        .index-icon.active,
+        .index-icon:hover {
+            background-color: #488dca;
+            border: 2px solid #488dca;
+            box-shadow: 0 0 10px 5px #488dca;
+            color: #488dca;
+        }
+
+        .index-icon:hover {
+            cursor: pointer;
+        }
+
+        /* icon实现 */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="wrap-outer">
+            <ul>
+                <li>
+                    <img src="http://via.placeholder.com/500X400" alt="">
+                </li>
+                <li>
+                    <img src="http://via.placeholder.com/500X400" alt="">
+                </li>
+                <li>
+                    <img src="http://via.placeholder.com/500X400" alt="">
+                </li>
+                <li>
+                    <img src="http://via.placeholder.com/500X400" alt="">
+                </li>
+                <li>
+                    <img src="http://via.placeholder.com/500X400" alt="">
+                </li>
+            </ul>
+        </div>
+        <button id="id-btn-back" class="controler back">
+            <</button>
+                <button id="id-btn-forward" class="controler forward">></button>
+                <div id="id-div-icons">
+                </div>
+    </div>
+
+    <script>
+        "use strict";
+        var log = function () {
+            console.log.apply(console, arguments);
+        };
+
+        var initIndexBtns = function () {
+            var images = document.querySelectorAll("li img");
+            var nodeIcons = document.querySelector("#id-div-icons");
+            var html = "";
+
+            for (var i = 0; i < images.length; i++) {
+                if (i === 0) {
+                    html += `<span class="index-icon active">${i}</span>\n`;
+                } else {
+                    html += `<span class="index-icon">${i}</span>\n`;
+                }
+            }
+
+            nodeIcons.innerHTML = html;
+        };
+
+        var lightIconByIndexFunction = function () {
+            var indexIcons = document.querySelectorAll(".index-icon");
+
+            var lightIconByIndex = function (index) {
+                for (var icon of indexIcons) {
+                    icon.className = "index-icon";
+                }
+                indexIcons[index].classList.add("active");
+            };
+
+            return lightIconByIndex
+        }
+
+        var initClickChangePic = function () {
+            var images = document.querySelectorAll("li img");
+            var wrap = document.querySelector(".wrap");
+            var currentIndex = 0;
+            var lightIconByIndex = lightIconByIndexFunction();
+            var length = images.length;
+            
+            wrap.addEventListener("click", function (e) {
+                var target = e.target;
+
+                if (target.className.includes("index-icon")) {
+                    currentIndex = parseInt(target.textContent);
+                }
+
+                if (target.className.includes("controler")) {
+                    var type = target.className;
+                    if (type.includes("forward")) {
+                        log("back");
+                        currentIndex < images.length - 1 ? currentIndex++ : null; //索引从0开始,images.length从1开始
+                    } else if (type.includes("back")) {
+                        currentIndex > 0 ? currentIndex-- : null;
+                    }
+                }
+
+                for (var img of images) {
+                    img.style.transform = `translate(${-500 * currentIndex}px)`;
+                }
+
+                lightIconByIndex(currentIndex);
+            });
+        };
+
+        var main = function () {
+            initIndexBtns();
+            initClickChangePic();
+        };
+
+        main();
+    </script>
+</body>
+
+</html>
