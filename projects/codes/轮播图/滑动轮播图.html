@@ -5,16 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>滑动轮播图</title>
     <style>
         body {
             margin: 0;
-        }
-
-        .wrap {
-            margin: 100px auto;
-            height: 400px;
-            width: 500px;
         }
 
         ul {
@@ -23,36 +17,38 @@
             list-style: none;
         }
 
-        /* init */
-
-        .wrap-outer {
-            width: 500px;
+        .wrap {
+            margin: 100px auto;
+        }
+        /* default */
+        .wrap {
             height: 400px;
+            width: 500px;
             border: 1px solid grey;
             overflow: hidden;
         }
-
-        ul {
+        /* init */
+        .wrap ul {
             display: block;
-            width: max-content;
-            height: 400px;
+            height: 100%;
+            width: 2500px;
         }
 
-        li {
-            display: inline-block;
+        .wrap li {
+            display: inline;
             font-size: 0;
             float: left;
         }
 
-        li img {
+        .wrap li img {
             display: block;
             transition: 1s;
             width: 500px;
             height: 400px;
         }
 
-        #id-btn-back,
-        #id-btn-forward {
+        .wrap #id-btn-back,
+        .wrap #id-btn-forward {
             position: relative;
             height: 50px;
             width: 50px;
@@ -64,23 +60,23 @@
             cursor: pointer;
         }
 
-        #id-btn-back {
+        .wrap #id-btn-back {
             bottom: 231px;
         }
 
-        #id-btn-forward {
+        .wrap #id-btn-forward {
             bottom: 231px;
             left: 397px;
         }
 
-        #id-btn-back:hover,
-        #id-btn-forward:hover {
+        .wrap #id-btn-back:hover,
+        .wrap #id-btn-forward:hover {
             opacity: 0.8;
         }
 
         /* main */
 
-        #id-div-icons {
+        .wrap #id-div-icons {
             text-align: center;
             line-height: 20px;
             position: relative;
@@ -88,7 +84,7 @@
             word-spacing: 20px;
         }
 
-        .index-icon {
+        .wrap .index-icon {
             display: inline-block;
             width: 20px;
             height: 20px;
@@ -102,15 +98,15 @@
             user-select: none;
         }
 
-        .index-icon.active,
-        .index-icon:hover {
+        .wrap .index-icon.active,
+        .wrap .index-icon:hover {
             background-color: #488dca;
             border: 2px solid #488dca;
             box-shadow: 0 0 10px 5px #488dca;
             color: #488dca;
         }
 
-        .index-icon:hover {
+        .wrap .index-icon:hover {
             cursor: pointer;
         }
 
@@ -119,26 +115,25 @@
 </head>
 
 <body>
+
     <div class="wrap">
-        <div class="wrap-outer">
-            <ul>
-                <li>
-                    <img src="http://via.placeholder.com/500X400" alt="">
-                </li>
-                <li>
-                    <img src="http://via.placeholder.com/500X400" alt="">
-                </li>
-                <li>
-                    <img src="http://via.placeholder.com/500X400" alt="">
-                </li>
-                <li>
-                    <img src="http://via.placeholder.com/500X400" alt="">
-                </li>
-                <li>
-                    <img src="http://via.placeholder.com/500X400" alt="">
-                </li>
-            </ul>
-        </div>
+        <ul>
+            <li>
+                <img src="http://via.placeholder.com/500X400" alt="">
+            </li>
+            <li>
+                <img src="http://via.placeholder.com/500X400" alt="">
+            </li>
+            <li>
+                <img src="http://via.placeholder.com/500X400" alt="">
+            </li>
+            <li>
+                <img src="http://via.placeholder.com/500X400" alt="">
+            </li>
+            <li>
+                <img src="http://via.placeholder.com/500X400" alt="">
+            </li>
+        </ul>
         <button id="id-btn-back" class="controler back">
             <</button>
                 <button id="id-btn-forward" class="controler forward">></button>
@@ -200,7 +195,7 @@
                     if (type.includes("forward")) {
                         currentIndex == maxIndex ? currentIndex = minIndex : currentIndex++; //索引从0开始,images.length从1开始
                     } else if (type.includes("back")) {
-                        
+
                         currentIndex == minIndex ? currentIndex = maxIndex : currentIndex--;
                         log("back", currentIndex);
                     }
