@@ -1,0 +1,83 @@
+
+header {
+
+    nav {
+        // height: 100px;
+        height: 100px;
+        background-color: #020c18;
+        
+        overflow: hidden;  //clear float
+
+        #id-div-logo {
+            padding: 54px 3px 0 3px;
+            height: 76px;
+            margin-left: 200/1920*100%;
+            line-height: 22px;
+            background: url(../images/logo.png) no-repeat 0 20px;
+            float: left;
+            h1 { 
+                color: #00a1e9;
+                font-size: 22px;
+                letter-spacing: 27px;
+                font-weight: normal;
+            }
+        }
+
+        #id-div-menu {
+
+            white-space: nowrap;
+
+            float: right;
+            padding-top: 29px;
+            width: 536px;
+            margin-right: 200/1920*100%;
+            height: 46px;
+            ul {
+                display: inline-block;
+                width: 382px;
+                height: 46px;
+                line-height: 46px;
+                // background-color: #fff;
+                color: white;
+                font-size: 18px;
+                word-spacing: 26px;
+                letter-spacing: 1px;
+    
+                li {
+                    display: inline-block;
+                    &:hover, &.active {
+                        color: #00a1e9;
+                    }
+    
+                    //hack
+                    &:nth-of-type(1) {
+                        span {
+                            color: black;
+                            user-select: none;
+                        }
+                    }
+                }
+    
+            }    
+    
+            .btn {
+                display: inline-block;
+                width: 122px;
+                height: 42px;
+                line-height: 40px;
+                text-align: center;
+                margin-left: 27px;
+                color: white;  
+                background: url(../images/btn.png) 0 44px;
+                letter-spacing: 1px;
+                font-size: 19px;
+                
+                &:hover {
+                    cursor: pointer;
+                    background: url(../images/btn.png) no-repeat;
+                }
+            }
+        }
+    }
+
+}

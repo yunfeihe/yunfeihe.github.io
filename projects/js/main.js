@@ -38,8 +38,8 @@ var autoScale = function(){
     for(var i=0; i<titlesNodes.length; i++){
         titles.push(titlesNodes[i]);
     }
-    window.addEventListener("mousemove", function(e){
-        // log(e);
+    window.addEventListener("mouseover", function(e){
+        log("1");
         var target = e.target;
         var targetIndex;
         for (let i = 0; i < titles.length; i++) {
