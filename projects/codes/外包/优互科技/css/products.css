@@ -30,10 +30,16 @@ h3 {
   padding: 0;
   font-weight: normal;
 }
+header {
+  padding-bottom: 100px;
+}
 header nav {
   height: 100px;
   background-color: #020c18;
+  position: fixed;
   overflow: hidden;
+  z-index: 2;
+  width: 100%;
 }
 header nav #id-div-logo {
   padding: 54px 3px 0 3px;
@@ -56,6 +62,11 @@ header nav #id-div-menu {
   width: 536px;
   margin-right: 10.41666667%;
   height: 46px;
+}
+header nav #id-div-menu::after {
+  content: ".";
+  display: block;
+  visibility: hidden;
 }
 header nav #id-div-menu ul {
   display: inline-block;

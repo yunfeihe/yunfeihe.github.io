@@ -1,0 +1,37 @@
+section.show-item-col {
+  margin-top: 160px;
+}
+section.show-item-col .head {
+  margin-bottom: 120px;
+}
+section.show-item-col .head .title {
+  margin-bottom: 14px;
+  color: #020c18;
+  text-align: center;
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  font-size: 35px;
+  letter-spacing: 5px;
+}
+section.show-item-col .head .hr {
+  font-size: 35px;
+  display: block;
+  margin: 0 auto;
+  width: 2.5em;
+  box-sizing: border-box;
+  background-color: #00a1e9;
+  border-radius: 5px;
+  height: 7px;
+}
+section.show-item-col .head .title-eng {
+  margin-top: 27px;
+  letter-spacing: 10px;
+  word-spacing: 10px;
+  color: #4d4d4d;
+  height: 28px;
+  line-height: 28px;
+  font-size: 28px;
+  text-align: center;
+  display: block ;
+}
