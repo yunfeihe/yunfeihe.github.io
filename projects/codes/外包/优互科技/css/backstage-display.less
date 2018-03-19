@@ -44,7 +44,7 @@ body {
 }
 
 section.show-item-col .content {
-    width: 1520 / 1920  * 100%;
+    width: 1520px;
     margin: 0 auto;
     &.backstage-display {
         margin-bottom: 240px;
@@ -57,14 +57,14 @@ section.show-item-col .content {
             vertical-align: top;
             box-sizing: border-box;
             display: inline-block;
-            width: 430px;
+            width: 480px;
             height: 640px;
             background-size: contain;
             background: url(../images/backstage-display-bg.jpg) no-repeat;
             padding-top: 104px;
 
             &:nth-of-type(2) {
-                margin: 0 auto;
+                margin: 0 34px;
                 clear: both;
             }
 
@@ -111,36 +111,4 @@ section.show-item-col .content {
 
 
 
-footer {
-    height: 432 - 81px;
-    background-color: #051223;
-    padding-top: 81px;
-
-    span {
-        display: block;
-        text-align: center;
-
-    }
-    .title {
-        font-size: 24px;
-        height: 24px ;
-        line-height: 24px;
-        margin-bottom: 59px;
-        color: white;
-    }
-    .normal {
-        color: white;
-        height: 18px;
-        line-height: 18px;
-        font-size: 18px;
-        margin-top: 24px;
-    }
-    .right {
-        font-size: 16px;
-        height: 16px;
-        line-height: 16px;
-        margin-top: 123px;
-        color: #85888c;
-    }
-}
-
+@import "./footer-other.less";

@@ -1,0 +1,72 @@
+#id-div-slide-show ul.images {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+#id-div-slide-show ul.images img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+#id-div-slide-show li {
+  position: absolute;
+  transition: 1s;
+  opacity: 0;
+}
+#id-div-slide-show li.active {
+  opacity: 1;
+}
+#id-div-slide-show li:last-of-type {
+  position: relative;
+}
+#id-div-slide-show #id-div-controlers {
+  background-color: red;
+}
+#id-div-slide-show #id-div-controlers .controler {
+  display: inline-block;
+  height: 64px;
+  width: 40px;
+  background-color: purple;
+  position: relative;
+  bottom: 200px;
+  opacity: 0.4;
+  transition: opacity 0.5s;
+}
+#id-div-slide-show #id-div-controlers .controler:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+#id-div-slide-show #id-div-controlers .back {
+  float: left;
+  left: 150px;
+  background: url(../images/controlers.png);
+}
+#id-div-slide-show #id-div-controlers .forward {
+  float: right;
+  right: 150px;
+  background: url(../images/controlers.png) 0 64px;
+}
+#id-div-slide-show .key-count {
+  text-align: center;
+  letter-spacing: 6px;
+  user-select: none;
+}
+#id-div-slide-show .key-count .key {
+  display: inline-block;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  font-size: 0px;
+  opacity: 0.4;
+  transition: 0.5s;
+  position: relative;
+  bottom: 60px;
+}
+#id-div-slide-show .key-count .key:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+#id-div-slide-show .key-count .key.active {
+  opacity: 1;
+}

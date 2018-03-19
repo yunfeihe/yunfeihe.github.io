@@ -318,6 +318,9 @@ section.qrcode {
   width: 79.16666667%;
   margin: 0 auto;
 }
+section.qrcode.false {
+  display: none;
+}
 section.qrcode img {
   display: inline-block;
   margin-left: 12%;
