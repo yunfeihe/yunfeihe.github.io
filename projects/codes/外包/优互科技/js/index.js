@@ -77,4 +77,4 @@ var lightSlideShowByIndex = function (index) {
 
 
 
-main();
+// main();
