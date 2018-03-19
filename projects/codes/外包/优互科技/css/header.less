@@ -1,13 +1,14 @@
 
 header {
-
+    padding-bottom: 100px;
     nav {
         // height: 100px;
         height: 100px;
         background-color: #020c18;
-        
+        position: fixed;
         overflow: hidden;  //clear float
-
+        z-index: 2;
+        width: 100%;
         #id-div-logo {
             padding: 54px 3px 0 3px;
             height: 76px;
@@ -25,6 +26,11 @@ header {
 
         #id-div-menu {
 
+            &::after {
+                content: ".";
+                display: block;
+                visibility: hidden;
+            }
             white-space: nowrap;
 
             float: right;
@@ -78,6 +84,8 @@ header {
                 }
             }
         }
+
+        
     }
 
 }

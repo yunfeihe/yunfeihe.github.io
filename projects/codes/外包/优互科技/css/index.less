@@ -436,6 +436,11 @@ section.show-item-col .content{
                  display: block;
                  max-width: 100%;
                  height: auto;
+                 opacity: 0.8;
+                 transition: 0.7s;
+                 &:hover {
+                    opacity: 1;
+                 }
              }
              .title {
                  display: block;
@@ -449,6 +454,9 @@ section.show-item-col .content{
                  color: white;
                  background-color: rgba(71, 191, 255, 0.9);
                  transition: 0.7s;
+                 &:hover {
+                     text-decoration: underline;
+                 }
                 //  &:hover {
                 //     background-color: rgb(37, 177, 253, 0.9);
                 //  }
@@ -459,11 +467,28 @@ section.show-item-col .content{
 
     &.partners {
         // height: 620px;
+        width: 1320 / 1920 * 100%;
         margin-bottom: 250px;
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .item {
+            img {
+                display: block;
+            }
+            
+            &:hover {
+                .normal {
+                    display: none;
+                }
+                .color {
+                    display: block;
+                }
+            }
+            .color {
+                display: none;
+            }
         }
     }
 

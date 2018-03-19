@@ -1,0 +1,75 @@
+header {
+  padding-bottom: 100px;
+}
+header nav {
+  height: 100px;
+  background-color: #020c18;
+  position: fixed;
+  overflow: hidden;
+  z-index: 2;
+  width: 100%;
+}
+header nav #id-div-logo {
+  padding: 54px 3px 0 3px;
+  height: 76px;
+  margin-left: 10.41666667%;
+  line-height: 22px;
+  background: url(../images/logo.png) no-repeat 0 20px;
+  float: left;
+}
+header nav #id-div-logo h1 {
+  color: #00a1e9;
+  font-size: 22px;
+  letter-spacing: 27px;
+  font-weight: normal;
+}
+header nav #id-div-menu {
+  white-space: nowrap;
+  float: right;
+  padding-top: 29px;
+  width: 536px;
+  margin-right: 10.41666667%;
+  height: 46px;
+}
+header nav #id-div-menu::after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+}
+header nav #id-div-menu ul {
+  display: inline-block;
+  width: 382px;
+  height: 46px;
+  line-height: 46px;
+  color: white;
+  font-size: 18px;
+  word-spacing: 26px;
+  letter-spacing: 1px;
+}
+header nav #id-div-menu ul li {
+  display: inline-block;
+}
+header nav #id-div-menu ul li:hover,
+header nav #id-div-menu ul li.active {
+  color: #00a1e9;
+}
+header nav #id-div-menu ul li:nth-of-type(1) span {
+  color: black;
+  user-select: none;
+}
+header nav #id-div-menu .btn {
+  display: inline-block;
+  width: 122px;
+  height: 42px;
+  line-height: 40px;
+  text-align: center;
+  margin-left: 27px;
+  color: white;
+  background: url(../images/btn.png) 0 44px;
+  letter-spacing: 1px;
+  font-size: 19px;
+}
+header nav #id-div-menu .btn:hover {
+  cursor: pointer;
+  background: url(../images/btn.png) no-repeat;
+}
