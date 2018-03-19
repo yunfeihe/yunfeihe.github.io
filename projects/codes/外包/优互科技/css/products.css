@@ -70,7 +70,6 @@ header nav #id-div-menu::after {
 }
 header nav #id-div-menu ul {
   display: inline-block;
-  width: 382px;
   height: 46px;
   line-height: 46px;
   color: white;
@@ -104,6 +103,23 @@ header nav #id-div-menu .btn {
 header nav #id-div-menu .btn:hover {
   cursor: pointer;
   background: url(../images/btn.png) no-repeat;
+}
+#go-to-top {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: black;
+  opacity: 0.6;
+  position: fixed;
+  right: 5%;
+  top: 80%;
+  color: white;
+  cursor: pointer;
+  transition: 0.6s;
+}
+#go-to-top:hover {
+  opacity: 1;
 }
 section.show-item-col {
   margin-top: 160px;
@@ -218,7 +234,7 @@ section.show-item-row .head .title-eng {
   font-size: 30px;
 }
 section.show-item-col .content {
-  width: 79.16666667%;
+  width: 1520px;
   margin: 0 auto;
 }
 section.show-item-col .content.demands .item {
@@ -283,7 +299,7 @@ section.show-item-col .content.typical-cases {
 }
 section.show-item-col .content.typical-cases .rest {
   margin: 0 auto;
-  width: 1260px;
+  width: 1330px;
 }
 section.show-item-col .content.typical-cases .rest div {
   display: inline-block;
@@ -310,8 +326,8 @@ section.show-item-col .content.typical-cases .rest .item .title {
 }
 section.show-item-col .content.typical-cases .rest .hr-col {
   height: 184px;
-  width: 1px;
-  margin: 254px 72px 0;
+  width: 2px;
+  margin: 254px 84px 0;
   background-color: #909090;
 }
 section.show-item-col .content.typical-cases .wrap img {
@@ -350,6 +366,9 @@ section.show-item-row .content.environment .item .title {
   color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
   line-height: 18px;
+}
+section.show-item-row .content.environment .item:hover .title {
+  font-weight: bold;
 }
 div.demands-title {
   height: 36px;

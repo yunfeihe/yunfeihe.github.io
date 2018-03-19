@@ -30,10 +30,16 @@ h3 {
   padding: 0;
   font-weight: normal;
 }
+header {
+  padding-bottom: 100px;
+}
 header nav {
   height: 100px;
   background-color: #020c18;
+  position: fixed;
   overflow: hidden;
+  z-index: 2;
+  width: 100%;
 }
 header nav #id-div-logo {
   padding: 54px 3px 0 3px;
@@ -57,9 +63,13 @@ header nav #id-div-menu {
   margin-right: 10.41666667%;
   height: 46px;
 }
+header nav #id-div-menu::after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+}
 header nav #id-div-menu ul {
   display: inline-block;
-  width: 382px;
   height: 46px;
   line-height: 46px;
   color: white;
@@ -93,6 +103,23 @@ header nav #id-div-menu .btn {
 header nav #id-div-menu .btn:hover {
   cursor: pointer;
   background: url(../images/btn.png) no-repeat;
+}
+#go-to-top {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: black;
+  opacity: 0.6;
+  position: fixed;
+  right: 5%;
+  top: 80%;
+  color: white;
+  cursor: pointer;
+  transition: 0.6s;
+}
+#go-to-top:hover {
+  opacity: 1;
 }
 section.show-item-col {
   margin-top: 160px;
