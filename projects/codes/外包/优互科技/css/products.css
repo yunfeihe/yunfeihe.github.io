@@ -359,7 +359,14 @@ section.show-item-col .content.typical-cases .wrap .description {
 }
 section.show-item-col .content.typical-cases .wrap .description span {
   display: block;
-  color: white;
+  color: black;
+}
+section.show-item-col .content.typical-cases .wrap .description .title {
+  height: 42px;
+  line-height: 42px;
+}
+section.show-item-col .content.typical-cases .wrap .description .content {
+  width: 386px;
 }
 section.show-item-row .content {
   width: 1096px;
