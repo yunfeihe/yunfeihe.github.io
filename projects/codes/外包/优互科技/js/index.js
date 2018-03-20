@@ -3,7 +3,7 @@ var main = function () {
     autoJustifyControlerPos();
     window.onresize = function(){
         autoJustifyControlerPos();
-    }
+    };
 
 };
 
@@ -15,7 +15,7 @@ var autoJustifyControlerPos = function(){
         log(controlers[i]);
         controlers[i].style.bottom = slideShow.offsetHeight / 2 + controlers[i].offsetHeight + "px";
     }
-}
+};
 
 var initSlideShow = function () {
     window.currentIndex = 0;
@@ -43,7 +43,7 @@ var initSlideShow = function () {
     });
 
     autoChangeSlideShow(3000);
-}
+};
 
 var autoChangeSlideShow = function (time) {
     setTimeout(function () {
@@ -69,7 +69,7 @@ var lightSlideShowByIndex = function (index) {
 
     //lightKeyCount
     var keys = sa(".key-count .key");
-    for (var i = 0; i < keys.length; i++) {
+    for (i = 0; i < keys.length; i++) {
         keys[i].classList.remove("active");
     }
     keys[index].classList.add("active");

@@ -336,11 +336,19 @@ section.show-item-col .content.typical-cases .wrap {
   background-size: cover;
   position: relative;
 }
+section.show-item-col .content.typical-cases .wrap .item {
+  opacity: 0;
+  transition: 1s;
+}
+section.show-item-col .content.typical-cases .wrap .active {
+  opacity: 1;
+  z-index: 1;
+}
 section.show-item-col .content.typical-cases .wrap .img {
   position: absolute;
   width: 946px;
   height: 640px;
-  left: 15%;
+  left: 17%;
   bottom: 20%;
 }
 section.show-item-col .content.typical-cases .wrap .img img {
@@ -348,7 +356,7 @@ section.show-item-col .content.typical-cases .wrap .img img {
   height: 100%;
 }
 section.show-item-col .content.typical-cases .wrap .description {
-  left: 60%;
+  left: 58%;
   bottom: 10%;
   width: 464px;
   height: 414px;
@@ -362,11 +370,27 @@ section.show-item-col .content.typical-cases .wrap .description span {
   color: black;
 }
 section.show-item-col .content.typical-cases .wrap .description .title {
+  display: inline-block;
   height: 42px;
   line-height: 42px;
+  font-size: 24px;
+  color: #051a21;
+  letter-spacing: 2px;
+  border-bottom: 4px solid #00c0ff;
+  margin-bottom: 39px;
 }
-section.show-item-col .content.typical-cases .wrap .description .content {
+section.show-item-col .content.typical-cases .wrap .description .sub-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  height: 18px;
+  letter-spacing: 3px;
+}
+section.show-item-col .content.typical-cases .wrap .description .rest-content {
   width: 386px;
+  font-size: 18px;
+  color: rgba(5, 26, 33, 0.8);
+  letter-spacing: 1px;
 }
 section.show-item-row .content {
   width: 1096px;

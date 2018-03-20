@@ -209,11 +209,20 @@ section.show-item-col .content {
             background-size: cover;
             position: relative;
 
+            .item {
+                opacity: 0;
+                transition: 1s;
+            }
+            .active {
+                opacity: 1;
+                z-index: 1;
+            }
+
             .img {
                 position: absolute;
                 width: 946px;
                 height: 640px;
-                left: 15%;
+                left: 17%;
                 bottom: 20%;
                 
                 img {
@@ -222,7 +231,7 @@ section.show-item-col .content {
                 }
             }
             .description {
-                left: 60%;
+                left: 58%;
                 bottom: 10%;
                 width: 464px;
                 height: 414px;
@@ -235,11 +244,27 @@ section.show-item-col .content {
                     color:black;
                 }
                 .title {
+                    display: inline-block;
                     height: 42px;
                     line-height: 42px;
+                    font-size: 24px;
+                    color: #051a21;
+                    letter-spacing: 2px;
+                    border-bottom: 4px solid #00c0ff;
+                    margin-bottom: 39px;
                 }
-                .content {
+                .sub-title {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    height: 18px;
+                    letter-spacing: 3px;
+                }
+                .rest-content {
                     width: 386px;
+                    font-size: 18px;
+                    color: rgba(5, 26, 33, 0.8);
+                    letter-spacing: 1px;
                 }
             }
         }

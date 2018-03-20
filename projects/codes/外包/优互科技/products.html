@@ -6,6 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/products.css">
+    <script src="./js/utils.js"></script>
+    <script src="./js/products.js"></script>
+    <script>
+    window.onload = function(){
+        var main = function(){
+            log("start");
+            window.currentShowIndex = 0;
+            nextShowItem();
+            var showItemEl = s(".typical-cases .wrap");
+            showItemEl.addEventListener("mouseover", function(e){
+                var target = e.target;
+                // log("*9", target.classList);
+                if(target.classList.contains("show-hover")){
+                    log("clear");
+                    clearTimeout(window.currentTimeOut);
+                }
+            });
+            showItemEl.addEventListener("mouseout",function(e){
+                var target = e.target;
+                log("e", e.target);
+                if(target.classList.contains("show-hover")){
+                    nextShowItem();
+                }
+                
+            });
+            showItemEl.addEventListener("click", function(e){
+                var target = e.target;
+                log("click ", e.target);
+                if(target.classList.contains("show-hover")){
+                    var a = s(".wrap .item.active a");
+                    href = a.href;
+                    log(a);
+                    window.open(href);
+                }
+            });
+        }
+        main()
+    };
+    
+    </script>
     <title>3</title>
 </head>
 
@@ -201,14 +241,34 @@
             </div>
             <div class="content typical-cases">
                 <div class="wrap">
-                    <div class="item">
-                        <div class="img"><img src="./images/typical-cases-1-img.jpg" alt=""></div>
-                        <div class="description">
-                            <span class="title">测试测试</span>
-                            <span class="sub-title">测试测试</span>
-                            <span class="content">超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试</span>
+                    <div class="item active">
+                        <a href="#top"></a>
+                        <div class="img show-hover"><img class="show-hover" src="./images/typical-cases-1-img.jpg" alt=""></div>
+                        <div class="description show-hover">
+                            <span class="title show-hover">测试测试</span>
+                            <span class="sub-title show-hover">AAAAA</span>
+                            <span class="rest-content show-hover">超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试</span>
                         </div>
                     </div>
+                    <div class="item">
+                            <a href="#top"></a>
+                            <div class="img show-hover"><img class="show-hover" src="./images/typical-cases-1-img.jpg" alt=""></div>
+                            <div class="description show-hover">
+                                <span class="title show-hover">级超试测</span>
+                                <span class="sub-title show-hover">BBBBBBB</span>
+                                <span class="rest-content show-hover">级超试测级超试测级超试测级超试测级超试测级超试测级超试测级超试测级超试测级超试测级超试测</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                                <a href="#top"></a>
+                                <div class="img show-hover"><img class="show-hover" src="./images/typical-cases-1-img.jpg" alt=""></div>
+                                <div class="description show-hover">
+                                    <span class="title show-hover">测试测试</span>
+                                    <span class="sub-title show-hover">CCCCCCC</span>
+                                    <span class="rest-content show-hover">超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试超级测试</span>
+                                </div>
+                            </div>
+                    
                 </div>
                 <div class="rest">
                     <div class="item">
@@ -284,6 +344,7 @@
         <span class="normal">合作邮箱：service@youhone.com</span>
         <span class="right">版权所有 广州优互信息科技有限公司 粤ICP备15001999号-2 © COPYRIGHT 2009 - 2015. WWW.YOUHONE.COM. ALL RIGHTS RESERVED.</span>
     </footer>
+    
 </body>
 
 </html>
