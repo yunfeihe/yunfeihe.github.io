@@ -208,6 +208,9 @@ section.show-item-col .content.advantage img {
   height: auto;
   margin: 0 auto;
 }
+section.show-item-col .content.process {
+  width: 1520px;
+}
 section.show-item-col .content.process .item {
   height: auto;
   white-space: nowrap;
@@ -242,6 +245,9 @@ section.show-item-col .content.process .item .description .rest {
   display: block;
   font-size: 24px;
   color: #787b7f;
+}
+section.show-item-col .content.demands {
+  width: 1520px;
 }
 section.show-item-col .content.demands .item {
   height: 110px;
@@ -315,7 +321,7 @@ section.show-item-col .content.demands .isok span {
   cursor: pointer;
 }
 section.qrcode {
-  width: 79.16666667%;
+  width: 1520px;
   margin: 0 auto;
 }
 section.qrcode.false {

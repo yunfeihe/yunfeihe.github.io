@@ -62,9 +62,13 @@ var lightSlideShowByIndex = function (index) {
     //索引从零开始
     log("light", index);
     var images = sa("#id-div-slide-show li");
+    var imgs = sa("#id-div-slide-show li img");
     for (var i = 0; i < images.length; i++) {
+        // images[i].style.position = "absolute";
+
         images[i].classList.remove("active");
     }
+    // images[index].style.position = "relative";
     images[index].classList.add("active");
 
     //lightKeyCount

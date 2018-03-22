@@ -9,14 +9,19 @@
   display: block;
 }
 #id-div-slide-show li {
-  position: absolute;
-  transition: 1s;
+  position: relative;
+  transition: opacity 1s;
+  display: none;
   opacity: 0;
+}
+#id-div-slide-show li img {
+  width: 100%;
 }
 #id-div-slide-show li.active {
   opacity: 1;
+  display: block;
 }
-#id-div-slide-show li:last-of-type {
+#id-div-slide-show li:first-of-type {
   position: relative;
 }
 #id-div-slide-show #id-div-controlers {

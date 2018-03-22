@@ -251,7 +251,7 @@ section.show-item-col .content.backstage-display .item .description {
 }
 section.show-item-col .content + .pic-show img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 footer {

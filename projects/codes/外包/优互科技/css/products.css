@@ -326,7 +326,7 @@ section.show-item-col .content.typical-cases .rest .item .title {
 section.show-item-col .content.typical-cases .rest .hr-col {
   height: 184px;
   width: 2px;
-  margin: 254px 84px 0;
+  margin: 254px 78px 0;
   background-color: #909090;
 }
 section.show-item-col .content.typical-cases .wrap {
@@ -394,6 +394,12 @@ section.show-item-col .content.typical-cases .wrap .description .rest-content {
   font-size: 18px;
   color: rgba(5, 26, 33, 0.8);
   letter-spacing: 1px;
+}
+section.show-item-col .content.typical-cases #id-div-wrap {
+  width: 1520px;
+  margin: 0 auto;
+  height: 704px;
+  position: relative;
 }
 section.show-item-row .content {
   width: 1096px;

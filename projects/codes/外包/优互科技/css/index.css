@@ -136,14 +136,19 @@ header nav #id-div-menu .btn:hover {
   display: block;
 }
 #id-div-slide-show li {
-  position: absolute;
-  transition: 1s;
+  position: relative;
+  transition: opacity 1s;
+  display: none;
   opacity: 0;
+}
+#id-div-slide-show li img {
+  width: 100%;
 }
 #id-div-slide-show li.active {
   opacity: 1;
+  display: block;
 }
-#id-div-slide-show li:last-of-type {
+#id-div-slide-show li:first-of-type {
   position: relative;
 }
 #id-div-slide-show #id-div-controlers {
@@ -242,11 +247,12 @@ section.show-item-col .content.service-offerings .item {
   display: inline-block;
   width: 480px;
   vertical-align: top;
-  height: 680px;
+  min-height: 680px;
+  height: auto;
   background-color: #fbfbfb;
 }
 section.show-item-col .content.service-offerings .item:nth-of-type(2) {
-  margin: 0 32px 0;
+  margin: 0 28px 0;
 }
 section.show-item-col .content.service-offerings .item:hover {
   background-color: #f2f2f2;
@@ -322,7 +328,7 @@ section.show-item-col .content.filed-of-service .row .item {
   vertical-align: top;
 }
 section.show-item-col .content.filed-of-service .row .item:nth-of-type(2) {
-  margin: 0 32px 0;
+  margin: 0 28px 0;
 }
 section.show-item-col .content.filed-of-service .row .item:hover .blue-cover {
   color: white;
@@ -430,7 +436,7 @@ section.show-item-col .content.partners {
 }
 section.show-item-col .content.partners .item {
   display: inline-block;
-  margin-right: 105px;
+  margin-right: 102px;
 }
 section.show-item-col .content.partners .item:nth-of-type(4n) {
   margin-right: 0;
