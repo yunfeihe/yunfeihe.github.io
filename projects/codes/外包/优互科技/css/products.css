@@ -340,6 +340,9 @@ section.show-item-col .content.typical-cases .wrap .item {
   opacity: 0;
   transition: 1s;
 }
+section.show-item-col .content.typical-cases .wrap .item:hover {
+  cursor: pointer;
+}
 section.show-item-col .content.typical-cases .wrap .active {
   opacity: 1;
   z-index: 1;
