@@ -338,7 +338,7 @@ section.show-item-col .content.typical-cases .wrap {
 }
 section.show-item-col .content.typical-cases .wrap .item {
   opacity: 0;
-  transition: 1s;
+  transition: 0.5s ease-out;
 }
 section.show-item-col .content.typical-cases .wrap .item:hover {
   cursor: pointer;
