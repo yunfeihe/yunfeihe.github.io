@@ -1,0 +1,23 @@
+body {
+    font-family: "微软雅黑", sans-serif;
+    font-size: 20px;
+    background-color: #8EA6B4;
+    color: #E7EFF3;
+}
+
+#title {
+    text-decoration: underline;
+    font-weight: bold;
+    font-style: italic;
+    /* line-height: 20px; */
+}
+
+
+.title-wrap {
+    text-indent: 2em;
+}
+
+.content-wrap {
+    padding-left: 4em;
+    font-size: 1.1em;
+}
