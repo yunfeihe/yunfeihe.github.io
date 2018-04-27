@@ -1,0 +1,51 @@
+body {
+    font-family: "微软雅黑", sans-serif;
+    font-size: 20px;
+    background-color: #8EA6B4;
+    color: #E7EFF3;
+    text-align: center;
+}
+
+#title {
+    text-decoration: underline;
+    font-weight: bold;
+    font-style: italic;
+    /* line-height: 20px; */
+}
+
+.item {
+    border: 10px dashed #984A59;
+    padding: 10px;
+    /* width: 50%; */
+}
+.item:nth-of-type(2n + 1) {
+    background-color: #FF8F56;
+}
+
+.title-wrap {
+}
+
+ul {
+    list-style-type: circle;
+
+}
+
+ol, ul {
+    margin: 0 auto;
+    list-style-position: inside;
+    width: 20%;
+    text-align: left;
+}
+
+.content-wrap {
+    font-size: 1.1em;
+}
+
+a {
+    text-decoration: underline overline;
+    color: inherit;
+}
+
+a:hover {
+    cursor: col-resize;
+}
