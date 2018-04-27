@@ -22,8 +22,6 @@ body {
     background-color: #FF8F56;
 }
 
-.title-wrap {
-}
 
 ul {
     list-style-type: circle;
@@ -42,7 +40,8 @@ ol, ul {
 }
 
 a {
-    text-decoration: underline overline;
+    text-decoration: underline dashed red;
+
     color: inherit;
 }
 
