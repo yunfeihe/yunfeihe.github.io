@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-title {
+  background-color: #858585;
+  padding: 10px 0;
+  color: white;
+}
+
+.main-title h1 {
+  text-indent: 2em;
+  margin: 0;
+}
+
+.item {
+  /* height: 90px; */
+  /* border: 1px solid rebeccapurple; */
+  overflow: hidden;
+  height: 126px;
+}
+
+.item .title {
+  display: inline-block;
+  float: left;
+  width: 100px;
+  font-weight: normal;
+  text-align: center;
+  background-color: #d6d6d6;
+  margin: 0;
+  padding: 50px 20px;
+  border-bottom: 1px solid white;
+}
+
+.item ul {
+  /* float: left; */
+  display: block;
+  border-bottom: 1px solid #d6d6d6;
+  height: 125px;
+}
+
+.item ul .sub-title {
+  font-weight: normal;
+}
+
+.item ul p {
+  margin: 0;
+}
+
+.personal .info-item,
+.contact .info-item {
+  display: block;
+  float: left;
+  margin-right: 40px;
+}
+
+.personal .prop {
+  font-weight: bold;
+}
+
+/* general method */
+
+.clearFix::after {
+  display: block;
+  content: ".";
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+}
+
+.item .sub-title {
+  font-weight: bold;
+}

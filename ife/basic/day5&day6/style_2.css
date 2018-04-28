@@ -1,0 +1,56 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+mian article {
+  height: 100%;
+}
+
+.main-title {
+  display: inline-block;
+  float: left;
+  /* vertical-align: top; */
+  text-align: center;
+  width: 150px;
+  margin-right: 20px;
+  color: white;
+  background-color: #65a5fa;
+  height: 100vh;
+}
+
+.content-wrap {
+  display: inline-block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.personal .info-item,
+.contact .info-item {
+  display: block;
+  float: left;
+  margin-right: 40px;
+}
+
+.personal .prop {
+  font-weight: bold;
+}
+
+/* general method */
+
+.clearFix::after {
+  display: block;
+  content: ".";
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+}
+
+.item .sub-title {
+  font-weight: bold;
+}

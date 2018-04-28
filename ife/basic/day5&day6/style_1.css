@@ -1,0 +1,30 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.personal .info-item,
+.contact .info-item {
+  display: block;
+  float: left;
+  margin-right: 40px;
+}
+
+.personal .prop {
+  font-weight: bold;
+}
+
+/* general method */
+
+.clearFix::after {
+  display: block;
+  content: ".";
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+}
+
+.item .sub-title {
+  font-weight: bold;
+}
