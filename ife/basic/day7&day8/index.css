@@ -122,8 +122,8 @@ ul {
   text-align: center;
 }
 .wrap .tab-contents .item .row:nth-of-type(2) .col {
-  padding: 80px;
-  width: 65px;
+  padding: 50px;
+  width: 130px;
 }
 .wrap footer {
   height: 150px;
