@@ -59,6 +59,7 @@ ul {
 }
 .wrap .slide-pic ul.key-count li.active {
   height: 45px;
+  line-height: 58px;
   opacity: 1;
 }
 .wrap .tabs {
