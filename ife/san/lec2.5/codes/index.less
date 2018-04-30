@@ -1,0 +1,114 @@
+//hover focus #c7c7c7
+//unfocus #ebebeb
+.input-box {
+  @normal-font-size: 18px;
+  input {
+    outline: none;
+    height: 32px;
+    border: 1px solid #dbdbdb;
+    min-width: 200px;
+    padding-left: 10px;
+    font-size: @normal-font-size;
+
+    &:hover {
+      border-color: #999999;
+    }
+
+    &:focus {
+      border: 1px solid #999999;
+      // outline: #c7c7c7;
+    }
+
+    &:disabled {
+      background-color: #f7f7f7;
+      cursor: not-allowed;
+      border-color: #dbdbdb;
+      &:focus {
+        border-color: #dbdbdb;
+      }
+    }
+  }
+
+  &.warn {
+    input {
+      border-color: #fb5d5f;
+    }
+
+    .warn-type-1 {
+      display: inline-block;
+      font-size: @normal-font-size;
+      margin-left: 20px;
+      color: #fb5d5f;
+      line-height: 32px;
+      height: 32px;
+    }
+
+    .warn-type-2 {
+      display: block;
+      font-size: 12px;
+      padding: 8px 10px;
+      color: #fb5d5f;
+    }
+
+    .warn-type-3 {
+        display: inline-block;
+        font-size: @normal-font-size;
+        background-color: #ffefef;
+        margin-bottom: 12px;
+        padding: 8px 10px;
+        color: #fb5d5f;
+        position: relative;
+        &::after {
+            display: block;
+            box-sizing: border-box;
+            width: 10px;
+            height: 10px;
+            background-color: #ffefef;
+            // z-index: -1;
+            left: 50%;
+            bottom: 0;
+            
+            content: " ";
+            position: absolute;
+            transform: translate(-45%, 50%)  rotate(45deg);
+
+        }
+      }
+  }
+}
+
+
+.checkbox {
+    @box-width: 16px;
+    @box-height: 16px;
+    display: inline-block;
+    
+    input {
+        &:checked {
+            & + .icon {
+                opacity: 1;
+            }
+        }
+
+        &:disabled {
+            & + .icon {
+                cursor: not-allowed;
+                opacity: 1;
+
+            }
+        }
+    }
+    .icon {
+        opacity: 0.7;
+        img {
+            display: block;
+            width: @box-width;
+            height: @box-height;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+}
