@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" type="text/css" href="./index.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="wrap-header">
+                <div class="title">
+                    <h1 class="logo">Logo</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">Github</a>
+                        </li>
+                        <li>
+                            <a href="#">Sign in</a>
+                        </li>
+                        <li>
+                            <a href="#">Loggin in</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+        <div class="slide-pic">
+            <div class="pics"></div>
+            <ul class="key-count">
+                <li class="key">1</li>
+                <li class="key">2</li>
+                <li class="key active">3</li>
+                <li class="key">4</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="tabs">
+                <div class="hack">
+
+                </div>
+                <div class="tab-keys">
+
+                    <ul>
+                        <input type="radio" name="tabs" id="tab-1" checked>
+
+                        <li class="key">
+                            <label for="tab-1">Home</label>
+                        </li>
+                        <input type="radio" name="tabs" id="tab-2">
+
+                        <li class="key">
+
+                            <label for="tab-2">Profile</label>
+                        </li>
+                        <input type="radio" name="tabs" id="tab-3">
+
+                        <li class="key">
+                            <label for="tab-3">About</label>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="tab-contents">
+                <div class="item">
+                    <div class="content-wrap">
+                        <div class="row">
+                            <div class="col">tab1 content 1</div>
+                            <div class="col">tab1 content 2</div>
+                            <div class="col">tab1 content 3</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">tab1 content 4</div>
+                            <div class="col">tab1 content 5</div>
+                            <div class="col">tab1 content 6</div>
+                            <div class="col">tab1 content 7</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">tab1 content 8</div>
+                            <div class="col">tab1 content 9</div>
+                            <div class="col">tab1 content 10</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item active">
+                    <div class="content-wrap">
+                        <div class="row">
+                            <div class="col">tab2 content 1</div>
+                            <div class="col">tab2 content 2</div>
+                            <div class="col">tab2 content 3</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">tab2 content 4</div>
+                            <div class="col">tab2 content 5</div>
+                            <div class="col">tab2 content 6</div>
+                            <div class="col">tab2 content 7</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">tab2 content 8</div>
+                            <div class="col">tab2 content 9</div>
+                            <div class="col">tab2 content 10</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content-wrap">no-content</div>
+                </div>
+            </div>
+        </div>
+        <footer>this is a footer</footer>
+    </div>
+
+    <script>
+        function main() {
+            let radioes = document.querySelectorAll("input");
+            let items = document.querySelectorAll(".tab-contents .item");
+            for (let r of radioes) {
+                r.addEventListener("change", function (e) {
+                    let index = e.target.id[4] - 1;
+
+                    for (let item of items) {
+                        item.classList.remove("active");
+                    }
+
+                    items[index].classList.add("active");
+                });
+            }
+
+
+
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

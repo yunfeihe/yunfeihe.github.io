@@ -1,0 +1,160 @@
+body,
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  header {
+    background-color: #333333;
+    height: 100px;
+    .wrap-header {
+      width: 960px;
+      margin: 0 auto;
+      height: 100%;
+      overflow: hidden;
+
+      .title {
+        .logo {
+          line-height: 100px;
+          float: left;
+          color: white;
+          font-weight: normal;
+        }
+      }
+
+      nav {
+        float: right;
+        li {
+          display: inline-block;
+          a:link {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .slide-pic {
+    background-color: #66bb33;
+    height: 400px;
+    position: relative;
+
+    ul.key-count {
+      position: absolute;
+      right: 150px;
+      bottom: 50px;
+      li {
+        display: inline-block;
+        width: 20px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: white;
+        border: 1px solid black;
+        opacity: 0.5;
+        vertical-align: bottom;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+
+        &.active {
+          height: 45px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .tabs {
+    margin-top: 20px;
+    border-bottom: 1px solid #dddddd;
+
+    //不用js就只能用点hack的方法，css不支持回溯
+
+    .tab-keys {
+      width: 960px;
+      margin: 0 auto;
+      position: relative;
+      top: 1px;
+      ul {
+        font-size: 0;
+        input {
+          display: none;
+        }
+        input:checked {
+          & + li.key {
+            background-color: #fff;
+            border-bottom-color: white;
+          }
+        }
+      }
+
+      li.key {
+        display: inline-block;
+        font-size: 16px;
+        text-align: center;
+        background-color: #eeeeee;
+        border: 1px solid #dddddd;
+        // margin-right: 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        label {
+          display: block;
+          width: 120px;
+          line-height: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  .tab-contents {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 10px;
+    .item {
+      display: none;
+      &.active {
+        display: flex;
+        flex-flow: column nowrap;
+        box-sizing: border-box;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        .col {
+          padding: 80px;
+          width: 140px;
+          border: 1px solid #cccccc;
+          text-align: center;
+        }
+
+        &:nth-of-type(2) {
+            .col {
+                padding: 80px;
+                width: 65px;
+            }
+        }
+      }
+    }
+  }
+
+  footer {
+      height: 150px;
+      color: white;
+      background-color: #666666;
+      text-align: center;
+      padding-top: 20px;
+  }
+}

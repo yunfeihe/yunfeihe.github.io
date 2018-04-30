@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 0;
+    }
+
+    .wrap {
+    }
+    
+    .left {
+        background-color: black;
+        
+        width: 200px;
+        float: left;
+        margin-left: -100%;
+    }
+
+    .center {
+        background-color: gray;
+
+        float: left;
+        width: 100%;
+    }
+
+    .center .content {
+        margin: 0 200px;
+    }
+
+    .right {
+        background-color: black;
+
+        width: 200px;
+        float: left;
+        margin-left: -200px;
+
+    }
+
+    .left, .center, .right {
+        height: 100vh;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+
+
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="center"><div class="content">中 自适应</div></div>
+        <div class="left">左 200px</div>
+        <div class="right">右 200px</div>
+    </div>
+</body>
+</html>

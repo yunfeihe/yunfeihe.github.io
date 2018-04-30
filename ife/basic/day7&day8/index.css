@@ -1,0 +1,133 @@
+body,
+h1 {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wrap header {
+  background-color: #333333;
+  height: 100px;
+}
+.wrap header .wrap-header {
+  width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+}
+.wrap header .wrap-header .title .logo {
+  line-height: 100px;
+  float: left;
+  color: white;
+  font-weight: normal;
+}
+.wrap header .wrap-header nav {
+  float: right;
+}
+.wrap header .wrap-header nav li {
+  display: inline-block;
+}
+.wrap header .wrap-header nav li a:link {
+  color: white;
+}
+.wrap .slide-pic {
+  background-color: #66bb33;
+  height: 400px;
+  position: relative;
+}
+.wrap .slide-pic ul.key-count {
+  position: absolute;
+  right: 150px;
+  bottom: 50px;
+}
+.wrap .slide-pic ul.key-count li {
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid black;
+  opacity: 0.5;
+  vertical-align: bottom;
+}
+.wrap .slide-pic ul.key-count li:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.wrap .slide-pic ul.key-count li.active {
+  height: 45px;
+  opacity: 1;
+}
+.wrap .tabs {
+  margin-top: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+.wrap .tabs .tab-keys {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  top: 1px;
+}
+.wrap .tabs .tab-keys ul {
+  font-size: 0;
+}
+.wrap .tabs .tab-keys ul input {
+  display: none;
+}
+.wrap .tabs .tab-keys ul input:checked + li.key {
+  background-color: #fff;
+  border-bottom-color: white;
+}
+.wrap .tabs .tab-keys li.key {
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.wrap .tabs .tab-keys li.key label {
+  display: block;
+  width: 120px;
+  line-height: 60px;
+  height: 60px;
+}
+.wrap .tab-contents {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.wrap .tab-contents .item {
+  display: none;
+}
+.wrap .tab-contents .item.active {
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+}
+.wrap .tab-contents .item .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.wrap .tab-contents .item .row .col {
+  padding: 80px;
+  width: 140px;
+  border: 1px solid #cccccc;
+  text-align: center;
+}
+.wrap .tab-contents .item .row:nth-of-type(2) .col {
+  padding: 80px;
+  width: 65px;
+}
+.wrap footer {
+  height: 150px;
+  color: white;
+  background-color: #666666;
+  text-align: center;
+  padding-top: 20px;
+}
