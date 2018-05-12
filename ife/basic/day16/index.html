@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn" class="operator">加</button>
+    <button id="minus-btn" class="operator">减</button>
+    <button id="times-btn" class="operator">乘</button>
+    <button id="divide-btn" class="operator">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        let showResult = (function() {
+            let resultEl = document.querySelector("#result");
+            return function(number) {
+                resultEl.innerHTML = "运算结果：" + number;
+            }
+        })();
+
+        let getResultOfTwo = (function() {
+            let a = document.querySelector("#first-number");
+            let b = document.querySelector("#second-number");
+            return function(exp) {
+                return exp(parseFloat(a.value), parseFloat(b.value));
+            }
+        })();
+        
+        let operators = document.querySelectorAll(".operator");
+        
+        for(let op of operators) {
+            op.onclick = function() {
+                let result;
+                if(this.id.indexOf("add") > -1) {
+                    console.log(this.id);
+                   result = getResultOfTwo((a, b) => a + b);
+                } else if(this.id.indexOf("minus") > -1) {
+                    result = getResultOfTwo((a, b) => a - b);
+                } else if (this.id.indexOf("times") > -1) {
+                    result = getResultOfTwo((a, b) => a * b);
+                } else if (this.id.indexOf("divide") > -1) {
+                    result = getResultOfTwo((a, b) => a / b);
+                }
+                showResult(result);
+            }
+        }
+        
+    </script>
+</body>
+</html>
