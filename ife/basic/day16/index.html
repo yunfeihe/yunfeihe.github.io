@@ -29,12 +29,11 @@
         })();
         
         let operators = document.querySelectorAll(".operator");
-        
+
         for(let op of operators) {
             op.onclick = function() {
                 let result;
                 if(this.id.indexOf("add") > -1) {
-                    console.log(this.id);
                    result = getResultOfTwo((a, b) => a + b);
                 } else if(this.id.indexOf("minus") > -1) {
                     result = getResultOfTwo((a, b) => a - b);
