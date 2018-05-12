@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">
     <title>IFE ECMAScript</title>
 </head>
-<body>        
-        <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
-        <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
-        <button id="trans-btn">转化为二进制</button>
-        <p id="result">运算结果</p>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
     <script>
 
-    function int(num) {
-        return Math.floor(num);
-    }
-
-function basicDec2Bin(decNumber) { //=> Array
-//exception
-    if(decNumber < 0) {
-            throw Error("得到负整数，要求非负整数");
-        } else if (isNaN(decNumber)) {
-            throw Error("NaN");
-        }
-        
-        //main
-        let nums = [];
-        while(int(decNumber / 2) != 0 || decNumber % 2 === 1) {
-            nums.push(decNumber % 2);
-            decNumber = int(decNumber / 2);
+        function int(num) {
+            return Math.floor(num);
         }
 
-        return nums.reverse();
-}
-
-function dec2bin(decNumber) { // => String
-    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
-    let dec2NumberArray = basicDec2Bin(decNumber);
-    correctDec2Num(dec2NumberArray);
-    return dec2NumberArray.join("");
-    
-}
-
-function correctDec2Num(dec2Array) {
-    let requiredBit = parseInt(document.querySelector("#bin-bit").value , 10);
-    let realBit = dec2Array.length;
-
-    if(requiredBit > realBit) {
-        while(dec2Array.length < requiredBit) {
-            dec2Array.unshift("0");
-        }
-    } else if (requiredBit < realBit) {
-        throw "给定数位小于实际数位";
-    } else {
-        return;
-    }
-}
-
-    function main() {
-        let btn = document.querySelector("#trans-btn");
-        
-        btn.onclick = (function() {
-            let resultEl = document.querySelector("#result");
-            let inputEl = dec2number = document.querySelector("#dec-number");
-            return function() {
-                let dec2number = parseInt(inputEl.value, 10);
-                resultEl.innerHTML = "运算结果: " + dec2bin(dec2number);
+        function basicDec2Bin(decNumber) { //=> Array
+            //exception
+            if (decNumber < 0) {
+                throw Error("得到负整数，要求非负整数");
+            } else if (isNaN(decNumber)) {
+                throw Error("NaN");
             }
-        })();
 
-    }
+            //main
+            let nums = [];
+            while (int(decNumber / 2) != 0 || decNumber % 2 === 1) {
+                nums.push(decNumber % 2);
+                decNumber = int(decNumber / 2);
+            }
 
-    main();
+            return nums.reverse();
+        }
+
+        function dec2bin(decNumber) { // => String
+            // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+            let dec2NumberArray = basicDec2Bin(decNumber);
+            correctDec2Num(dec2NumberArray);
+            return dec2NumberArray.join("");
+
+        }
+
+        function correctDec2Num(dec2Array) {
+            let requiredBit = parseInt(document.querySelector("#bin-bit").value, 10);
+            let realBit = dec2Array.length;
+
+            if (requiredBit > realBit) {
+                while (dec2Array.length < requiredBit) {
+                    dec2Array.unshift("0");
+                }
+            } else if (requiredBit < realBit) {
+                throw "给定数位小于实际数位";
+            } else {
+                return;
+            }
+        }
+
+        function main() {
+            let btn = document.querySelector("#trans-btn");
+
+            btn.onclick = (function () {
+                let resultEl = document.querySelector("#result");
+                let inputEl = dec2number = document.querySelector("#dec-number");
+                return function () {
+                    let dec2number = parseInt(inputEl.value, 10);
+                    resultEl.innerHTML = "运算结果: " + dec2bin(dec2number);
+                }
+            })();
+
+        }
+
+        main();
 
 
 // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
@@ -78,4 +80,5 @@ function correctDec2Num(dec2Array) {
 
     </script>
 </body>
+
 </html>
