@@ -33,6 +33,7 @@ ul {
   background-color: #222c3c;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 .wrap .information .item {
   margin-top: 30px;
