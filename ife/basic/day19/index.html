@@ -104,7 +104,12 @@
 
         function findAllHtmlSpanInOneSection(sectionId) {
             let sec = document.getElementById(sectionId);
-            return getAllItemOfTag("span", sec);
+            return getAllItemOfTag("span", sec).filter((node) => {
+                if(node.textContent.indexOf("HTML") !== -1) {
+                    return true;
+                }
+                return false;
+            });
             // 返回某个section下所有span中内容为HTML的span标签
         }
 
