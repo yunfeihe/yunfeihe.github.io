@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+        <button id="fade-btn">淡出</button>
+        <script>
+            function main() {
+                let btn = document.querySelector("#fade-btn");
+                let el = document.querySelector("#fade-obj");
+                let isFadeIn = false;
+                btn.onclick = function() {
+                    console.log("e");
+                    let time = 5000;
+                    if(isFadeIn) {
+                        fade(el, 0, time,() => {
+                            this.disabled = false;
+                            isFadeIn = false;
+                        });
+                    } else {
+                        fade(el, 1, time, () => {
+                            this.disabled = false;
+                            isFadeIn = true;
+                        });
+                    }
+                    this.disabled = true;
+                }
+            }
+
+            function fade(element, mode = 1, time = 1000, callback) {
+                const FadeOut = 1;
+                const FadeIn = 0;
+                //mode 1 fadeOut
+                let f = time / 100;  //每0.01透明度时间;
+                if(f < 4) {
+                    console.log("间隔小于4ms，按4ms计算");
+                }
+                let opacity = mode === FadeOut ? 1 : 0;
+
+                function wrap() {
+                    setTimeout(() => {
+                        console.log("titmeout")
+                        if(mode === FadeOut && opacity <= 0) {
+                            callback();
+                            return;
+                        } else if (mode === FadeIn && opacity >= 1) {
+                            callback();
+                            return;
+                        }
+
+                        mode === FadeIn ? opacity += 0.01 : opacity -= 0.01;
+                        element.style.opacity = opacity;
+                        
+
+                        return wrap();
+                    }, f);
+                }
+
+                return wrap();
+            }
+
+            main();
+        </script>
+</body>
+</html>

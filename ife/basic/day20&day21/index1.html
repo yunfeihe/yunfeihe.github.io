@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+        select {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+            <label>
+                    <input id="school" name="status" type="radio">
+                    School
+                </label>
+                <label>
+                    <input id="company" name="status" type="radio">
+                    Company
+                </label>
+    </div>            
+    
+
+    <select id="school-select">        
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">        
+        <option>百度</option>
+        <option>爱奇艺</option>        
+    </select>
+
+    <script>
+        function main() {
+            let school = document.querySelector("#school");
+            let company = document.querySelector("#company");
+            let schoolSelect = document.querySelector("#school-select");
+            let companySelect = document.querySelector("#company-select");
+            let wrap = document.querySelector(".wrap");
+            wrap.onclick = function(e) {
+                function hidenAll() {
+                    schoolSelect.style.display = "none";
+                    companySelect.style.display = "none";
+                }
+                hidenAll();
+                if(e.target.id.indexOf("school") > -1) {
+                    schoolSelect.style.display = "initial";
+                } else if (e.target.id.indexOf("company") > -1) {
+                    companySelect.style.display = "initial";
+                }
+            }
+        }
+
+        main();
+    
+    </script>
+</body>
+</html>

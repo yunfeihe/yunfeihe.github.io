@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bg {
+            /* border: 1px solid red; */
+            height: 480px;
+            width: 480px;
+            background: url("./man.jpg") 0 0 no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="bg"></div>
+    </div>
+    <script>
+        function main() {
+            let bg = document.querySelector(".bg");
+            let imgHeight = 8160;
+            let oneHeight = 480;
+            let startHeight = 0;
+            let isBackWord = false;
+            function wrap(f = 100, loop = true) {
+                setTimeout(() => {
+                    if (isBackWord) {
+                        startHeight += oneHeight;
+                        if (startHeight === 0) {
+                            isBackWord = false;
+                        }
+                    } else {
+                        startHeight -= oneHeight;
+                        if(startHeight === -(imgHeight - oneHeight)) {
+                            isBackWord = true;
+                        }
+                    }
+                    bg.style.backgroundPosition = `0 ${startHeight}px`;
+                    console.log("s", startHeight)
+                    return wrap();
+                }, f)
+            }
+            wrap();
+        }
+
+        main();
+
+
+    </script>
+</body>
+
+</html>

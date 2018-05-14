@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn">Submit</button>
+    <script>
+
+        function main() {
+            let btn = document.querySelector("#submit-btn");
+            let input = document.querySelector("#name");
+            input.addEventListener("keydown", (e) => {
+                if(e.key.toLowerCase() === "enter") {
+                    console.log("input:", input.value);
+                }
+            });
+            btn.onclick = function() {
+                console.log("input:", input.value);
+            }
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
