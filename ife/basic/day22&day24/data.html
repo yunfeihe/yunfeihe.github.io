@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function objectToArray(ob) {
+        let result = [];
+        let keys = Object.keys(ob);
+        for(let k of keys) {
+            let item = [];
+            item.push(k);
+            let subKeys = Object.keys(ob[k]);
+            for(let sk of subKeys) {
+                item.push(ob[k][sk]);
+            }
+            result.push(item);
+        }
+        return result;
+    }
+
+        function valueOfObject(ob, key) {
+            let result = [];
+            function wrap(ob) {
+                if(typeof ob !== "object") {
+                    return;
+                }
+                for(let k in ob) {
+                    if(ob.hasOwnProperty(k)) {
+                        if(k === key) {
+                            result.push(ob[k]);
+                        }
+                        wrap(ob[k]);
+                    }
+                }
+            }
+            wrap(ob);
+            return result;
+        }
+
+    function arrayToObject(arr) {
+//         var menuArr = [
+//     [1, "Area1", -1],   //key value father
+//     [2, "Area2", -1],
+//     [3, "Area1-1", 1],
+//     [4, "Area1-2", 1],
+//     [5, "Area2-1", 2],
+//     [6, "Area2-2", 2],
+//     [7, "Area1-2-3", 4],
+//     [8, "Area2-2-1", 6],
+// ];
+        let menu = {};
+
+        function helpInsert (targetObject, level, key) {
+            if(level === -1) {
+                menu[key] = targetObject;;
+            } else {
+                let valueOfMenu = valueOfObject(menu, new String(level).toString())[0];
+                if(valueOfMenu.subMenu === undefined) {
+                    valueOfMenu.subMenu = {};
+                }
+                valueOfMenu.subMenu[key] = targetObject;
+            }
+        }
+
+        for(let item of arr) {
+            let id = new String(item[0]).toString();
+            let name = item[1];
+            let level = item[2];
+            let targetOb = {
+                name: name,
+            }
+            helpInsert(targetOb, level, id);
+        }
+        return menu;
+    }
+    
+    
+    </script>
+</body>
+</html>

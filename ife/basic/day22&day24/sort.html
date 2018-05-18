@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    function sortTask1(front, behind) {
+        if(front > behind) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+
+    function sortTask1_2(front, behind) {
+        if(front < behind) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+
+    function sortTask2(front, behind) {
+        let f = front.charCodeAt(0);
+        let b = behind.charCodeAt(0);
+        return f < b ? -1 : 1;
+    }
+
+    function sortTask2_2(front, behind) {
+        let f = front.charCodeAt(0);
+        let b = behind.charCodeAt(0);
+        return f > b ? -1 : 1;
+    }
+
+    function sortTask3(front, behind) {
+        let f = front[1];
+        let b = behind[1];
+        return f > b ? -1 : 1;
+    }
+
+    function sortTask4(front, behind) {
+        let f= front.value;
+        let b = behind.value;
+        return f < b ? -1 : 1;
+    }
+    
+    
+    </script>
+</body>
+</html>

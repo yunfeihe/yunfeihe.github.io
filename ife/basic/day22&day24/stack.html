@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="stack-input" type="text">
+    <p id="stack-cont">栈内容：apple-gt;pear</p>
+    <button id="push-btn">进栈</button>
+    <button id="pop-btn">退栈</button>
+    <button id="font-btn">打印栈顶元素内容</button>
+    <button id="empty-btn">判断栈是否为空</button>
+
+    <script>
+
+        var stack = ["apple", "pear"];
+
+        function s(seletor) {
+            return document.querySelector(seletor);
+        }
+
+        function main() {
+
+            s("#push-btn").onclick = function () {
+                let value = s("#stack-input").value;
+
+                stack.push(value);
+            }
+
+            s("#pop-btn").onclick = function () {
+                stack.pop();
+            }
+
+            s("#font-btn").onclick = function () {
+                console.log("content: " + stack[stack.length - 1]);
+            }
+
+            s("#empty-btn").onclick = function () {
+                console.log("empty: ", stack.length === 0);
+            }
+
+            s("body").onclick = function () {
+                s("#stack-cont").innerHTML = stack.join("->");
+            }
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
