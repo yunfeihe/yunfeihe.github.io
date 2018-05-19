@@ -96,6 +96,11 @@ function init() {
                 numOfDays = 30;
             }
             page.dayEl.innerHTML = page.makeSelect("day-select", 1, numOfDays -1);
+        } else if (target === "year") {
+            let year = page.selectedDate.year;
+            if(isLeapYear(year)) {
+                page.notify("month");
+            }
         }
     };
 
@@ -109,46 +114,16 @@ function init() {
     page.minEl.innerHTML = page.makeSelect("min-select", 0, 59);
     page.secEl.innerHTML = page.makeSelect("sec-select", 0, 59);
 
-    page.yearEl.onchange = function(e) {
-        let selectEl = e.target;
-        let op = page.selectedOption(selectEl);
-        page.selectedDate.year = parseInt(op.value);
-        page.notify("year");
-    };
+    let namesOfEl = ["year", "month", "day", "hour", "min", "sec"];
 
-    page.monthEl.onchange = function(e) {
-        let selectEl = e.target;
-        let op = page.selectedOption(selectEl);
-        page.selectedDate.month = parseInt(op.value);
-        page.notify("month");
-    };
-
-    page.dayEl.onchange = function(e) {
-        let selectEl = e.target;
-        let op = page.selectedOption(selectEl);
-        page.selectedDate.day = parseInt(op.value);
-        page.notify("day");
-    };
-
-    page.hourEl.onchange = function(e) {
-        let selectEl = e.target;
-        let op = page.selectedOption(selectEl);
-        page.selectedDate.hour = parseInt(op.value);
-    };
-
-    page.minEl.onchange = function(e) {
-        let selectEl = e.target;
-        let op = page.selectedOption(selectEl);
-        page.selectedDate.min = parseInt(op.value);
-    };
-
-    page.secEl.onchange = function(e) {
-        let selectEl = e.target;
-        let op = page.selectedOption(selectEl);
-        page.selectedDate.sec = parseInt(op.value);
-    };
-
-
+    for(let name of namesOfEl) {
+        page[name + "El"].onchange = function(e) {
+            let selectEl = e.target;
+            let op = page.selectedOption(selectEl);
+            page.selectedDate[name] = parseInt(op.value);
+            page.notify(name);
+        };
+    }
 
     (function wrap(){
         function helpCalcYearDays(yearA, yearB) {
