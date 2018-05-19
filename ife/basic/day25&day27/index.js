@@ -99,10 +99,7 @@ function init() {
             }
             page.dayEl.innerHTML = page.makeSelect('day-select', 1, numOfDays - 1);
         } else if (target === 'year') {
-            let year = page.selectedDate.year;
-            if (isLeapYear(year)) {
-                page.notify('month');
-            }
+            this.notify('month');
         }
     };
 
