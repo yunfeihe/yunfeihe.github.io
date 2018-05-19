@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .time {
+        border: 1px solid red;
+    }
+    </style>
+</head>
+<body>
+    <div class="time">time:</div>
+
+    <script>
+        function getYearOf(date) {
+            return date.getFullYear();
+        }
+
+        function getDayOf(date) {
+            return date.getDate();
+        }
+
+        function getMonthOf(date) {
+            return date.getMonth() + 1;
+        }
+
+        function getDayOfWeek(date) {
+            return date.getDay() + 1;
+        }
+
+        function leftX(str, num, char = " ") {
+            if(typeof str === "number") {
+                str = `${str}`;
+            }
+            let arr = str.split("");
+            let result;
+            if(arr.length === num) {
+                result = str;
+            } else if(arr.length < num) {
+                while(arr.length < num) {
+                    arr.unshift(char);
+                }
+                result = arr.join("");
+
+            } else if (arr.length > num) {
+                while(arr.length > num) {
+                    arr.shift();
+                }
+                result = arr.join("");
+            }
+            return result;
+        }
+
+    function main() {
+        setInterval(() => {
+            let date = new Date();
+            let y = getYearOf(date);
+            let m = getMonthOf(date);
+            let d = getDayOf(date);
+            let wd = getDayOfWeek(date);
+            let result = `${y}年${leftX(m, 2, 0)}月${leftX(d, 2, 0)}日星期${wd} ${leftX(19, 2, 0)}:${leftX(date.getMinutes(), 2)}:${leftX(date.getSeconds(), 2)}`;
+            
+            let resultX = `${y}-${leftX(m, 2, 0)}-${leftX(d, 2, 0)}-${wd} ${leftX(19, 2, 0)}:${leftX(date.getMinutes(), 2)}:${leftX(date.getSeconds(), 2)} ${date.getHours() >= 12 ? "PM" : "AM"}`
+            
+            document.querySelector(".time").textContent = resultX;
+        }, 1000);
+    }
+
+    main();
+
+    
+    </script>
+</body>
+</html>
