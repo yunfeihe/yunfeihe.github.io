@@ -27,7 +27,8 @@
             tempEl.textContent = email;      //转义
             // tempEl.innerHTML = email         //过滤
             let safeEmail = tempEl.innerHTML;
-            isTheFirst ? 
+            isTheFirst 
+            ? 
             result += `<li class="sug-item active">${safeEmail}</li>`
             :
             result += `<li class="sug-item">${safeEmail}</li>`;
@@ -75,14 +76,14 @@
                 let completeList = postfixList
                 .filter(postfix => {
                     if(input.indexOf('@') > -1) {
-                        let inputPostfix = input.split("@")[1];
+                        let inputPostfix = input.split("@")[1];     //截取用户输入@后的内容
                         return postfix.indexOf(inputPostfix) === 0;  //startsWith(inputPostfix)
                     } else {
                         return true;
                     }
                 })
                 .map(postfix => {
-                    let fixedInput = input.indexOf('@') > - 1 ? input.split("@")[0] : input;
+                    let fixedInput = input.indexOf('@') > - 1 ? input.split("@")[0] : input;  //无论用户是否输入@得到@前的内容
                     return fixedInput + "@" + postfix;
                 });
                 showEmailHint(completeList);
