@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./task1.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug">
+            <li class="sug-item active">yunfei@qq.com</li>
+            <li class="sug-item">yunfei@qq.com</li>
+        </ul>
+    </div>
+
+    <script>
+    var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+
+    function makeTagsOfLi(emailList) {
+        let result = "";
+        let tempEl = document.createElement("div");
+        let isTheFirst = true;
+        for(let email of emailList) {
+            tempEl.textContent = email;      //转义
+            // tempEl.innerHTML = email         //过滤
+            let safeEmail = tempEl.innerHTML;
+            isTheFirst ? 
+            result += `<li class="sug-item active">${safeEmail}</li>`
+            :
+            result += `<li class="sug-item">${safeEmail}</li>`;
+            isTheFirst = false;
+        }
+        tempEl = null;
+        return result;
+    }
+
+    function showEmailHint(emailList) {
+        let htmlContent = makeTagsOfLi(emailList);
+        document.querySelector("#email-sug-wrapper").innerHTML = htmlContent;
+        document.querySelector("#email-sug-wrapper").style.visibility = "visible";
+    }
+
+    function hiddenEmailHint() {
+         document.querySelector("#email-sug-wrapper").style.visibility = "hidden";
+    }
+
+    function selectHintOfIndex(index) {
+        let hints = document.querySelectorAll(".sug-item");
+        for(let h of hints) {
+            h.classList.remove("active");
+        }
+        hints[index].classList.add("active");
+    }
+
+    function currentSizeOfHint() {
+        return document.querySelectorAll(".sug-item").length;
+    }
+
+    function main() {
+        let inputEl = document.querySelector("#email-input");
+        let inputWrapEl = document.querySelector("#email-sug-wrapper");
+        let currentSelectedIndex = 0;
+
+        
+        inputEl.addEventListener("input", function(){
+            console.log("e");
+            //reset currentSelectedIndex
+            currentSelectedIndex = 0;
+
+            let input = this.value.trim();
+            if(input.length > 0) {
+                let completeList = postfixList
+                .filter(postfix => {
+                    if(input.indexOf('@') > -1) {
+                        let inputPostfix = input.split("@")[1];
+                        return postfix.indexOf(inputPostfix) === 0;  //startsWith(inputPostfix)
+                    } else {
+                        return true;
+                    }
+                })
+                .map(postfix => {
+                    let fixedInput = input.indexOf('@') > - 1 ? input.split("@")[0] : input;
+                    return fixedInput + "@" + postfix;
+                });
+                showEmailHint(completeList);
+            } else {
+                hiddenEmailHint();
+            }
+            
+        });
+        inputEl.addEventListener("keydown", function(e) {
+            // console.log(e);
+            if(e.key === "ArrowUp") {
+                currentSelectedIndex <= 0 
+                ? 
+                currentSelectedIndex = currentSizeOfHint() - 1
+                : 
+                currentSelectedIndex--;
+                selectHintOfIndex(currentSelectedIndex);
+            } else if (e.key === "ArrowDown") {
+                currentSelectedIndex >= currentSizeOfHint() - 1 
+                ? 
+                currentSelectedIndex = 0
+                :
+                currentSelectedIndex++;
+
+                selectHintOfIndex(currentSelectedIndex);
+            } else if (e.key ===  'Enter') {
+                let emailHint = inputWrapEl.querySelectorAll(".sug-item")[currentSelectedIndex].textContent;
+                inputEl.value = emailHint;
+                hiddenEmailHint();
+            }
+        });
+
+        inputWrapEl.addEventListener("click", function(e){
+            if(e.target.classList.contains("sug-item")) {
+                
+                inputEl.value = e.target.textContent;
+                inputEl.focus();
+                hiddenEmailHint();
+            }
+        });
+    }
+
+    main();
+
+
+    </script>
+</body>
+</html>

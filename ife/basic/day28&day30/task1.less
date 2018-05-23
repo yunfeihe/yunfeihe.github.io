@@ -1,0 +1,32 @@
+body, ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.wrapper {
+    width: 200px;
+    padding-left: 100px;
+    
+    #email-input {
+        width: 100%;
+        //default
+    }
+    #email-sug-wrapper {
+        width: 100%;
+
+        //default
+        visibility: hidden;
+        .sug-item {
+            &:hover {
+                background-color: chocolate;
+                cursor: context-menu;
+            }
+
+            &.active {
+                background-color: red;
+            }
+        }
+        
+    }
+}
