@@ -67,17 +67,34 @@
 
         
         inputEl.addEventListener("input", function(){
-            console.log("e");
             //reset currentSelectedIndex
             currentSelectedIndex = 0;
 
             let input = this.value.trim();
             if(input.length > 0) {
+                
+                let isSubstring = false;
                 let completeList = postfixList
                 .filter(postfix => {
                     if(input.indexOf('@') > -1) {
                         let inputPostfix = input.split("@")[1];     //截取用户输入@后的内容
-                        return postfix.indexOf(inputPostfix) === 0;  //startsWith(inputPostfix)
+                        
+                        //输入a@qq.comm->出现提示框，出现全部提示
+                        //对以上要求的不优雅实现
+                        let isStartWith = postfix.indexOf(inputPostfix) === 0;
+                        if (isStartWith && !isSubstring) {
+                            return isStartWith;
+                        } else {
+                            console.log("*");
+                            for(let em of postfixList) {
+                                console.log(inputPostfix.indexOf(em) > -1, inputPostfix.length !== em.length)
+                                if(inputPostfix.indexOf(em) > -1 && inputPostfix.length !== em.length) {
+                                    isSubstring = true;
+                                    return true;
+                                }
+                            }
+                        }
+                                                
                     } else {
                         return true;
                     }
