@@ -92,7 +92,7 @@
                 <td>${item.product}</td>
                 <td>${item.region}</td>
                 ${'<td>' + item.sale.join('</td><td>') + '</td>'}
-                </tr>
+                </tr>                 
                 `;
             }
 
@@ -100,9 +100,9 @@
             document.querySelector("#table").innerHTML = html;
 
         }
-
         function main() {
-
+            
+            renderTable(dataOfSource());
             document.querySelector(".wrap").addEventListener("change", function (e) {
                 // console.log(e.target)
                 // let changedSelect = e.target;

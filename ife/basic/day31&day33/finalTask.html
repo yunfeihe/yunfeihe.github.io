@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="ife31data.js"></script> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="region-wrap">
+            <label>全选
+                <input type="checkbox" class="all" data-value="all">
+            </label>
+            <label>华东
+                <input type="checkbox" class="item" dataset-value>
+            </label>
+            <label>华北
+                <input type="checkbox" class="item" dataset-value>
+            </label>
+            <label>华南
+                <input type="checkbox" class="item" dataset-value>
+            </label>
+        </div>
+        <div class="product-wrap">
+            <label>全选
+                <input type="checkbox" class="all" data-value="all">
+            </label>
+            <label>手机
+                <input type="checkbox" class="item" dataset-value>
+            </label>
+            <label>笔记本
+                <input type="checkbox" class="item" dataset-value>
+            </label>
+            <label>智能音箱
+                <input type="checkbox" class="item" dataset-value>
+            </label>
+        </div>
+    </div>
+    <div class="show-wrap">
+        <table border="1px" id="table">
+        </table>
+    </div>
+
+    <script>
+        function dataOfSource() {
+            let sourceData = [{
+                product: "手机",
+                region: "华东",
+                sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+            }, {
+                product: "手机",
+                region: "华北",
+                sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+            }, {
+                product: "手机",
+                region: "华南",
+                sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+            }, {
+                product: "笔记本",
+                region: "华东",
+                sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+            }, {
+                product: "笔记本",
+                region: "华北",
+                sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+            }, {
+                product: "笔记本",
+                region: "华南",
+                sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+            }, {
+                product: "智能音箱",
+                region: "华东",
+                sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+            }, {
+                product: "智能音箱",
+                region: "华北",
+                sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+            }, {
+                product: "智能音箱",
+                region: "华南",
+                sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+            }]
+            return sourceData;
+        }
+
+        function count(arr, value, key) {
+            let num = 0;
+            for (let item of arr) {
+                if (key !== undefined) {
+                    item[key] === value ? num++ : '';
+                } else {
+                    item === value ? num++ : '';
+                }
+            }
+            return num;
+        }
+
+        function selectedOptionFrom(selectEl) {
+            for (let op of selectEl.querySelectorAll("option")) {
+                if (op.selected) {
+                    return op;
+                }
+            }
+        }
+
+        function numOfcheckedOf(checkboxWrapEl) {
+            let num = 0;
+            for (let cb of checkboxWrapEl.querySelectorAll(".item")) {
+                cb.checked ? num++ : '';
+            }
+            return num;
+        }
+
+
+        function renderTable(data) {
+            let html = "";
+            let wtf = ["商品", "地区", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+            let thes = ["<tr>", '</tr>'].join('<th>' + wtf.join("</th><th>") + '</th>');
+
+            let numOfCheckedProduct = numOfcheckedOf(document.querySelector(".product-wrap"));
+            let numOfCheckedRegion = numOfcheckedOf(document.querySelector('.region-wrap'));
+
+            let tdes = "";
+
+            let isFirst = true;
+            let isTheSame = false;
+            let lastItem = null;
+            for (let item of data) {
+                if (lastItem !== null &&  item.product === lastItem.product) {
+                    isTheSame = true;
+                }
+
+                if (numOfCheckedProduct === 1) {
+                    tdes +=
+                        `
+                    <tr>
+                    ${isFirst ? '<td rowspan=' + count(data, data[0].product, 'product') + ' >' + item.product + '</td>' : ''}
+                    <td>${item.region}</td>
+                    ${'<td>' + item.sale.join('</td><td>') + '</td>'}
+                    </tr>                 
+                    `;
+                } else if (numOfCheckedRegion === 1) {
+                    tdes +=
+                        `
+                    <tr>
+                    <td>${item.product}</td>
+                    ${isFirst ? '<td rowspan=' + count(data, data[0].region, 'region') + ' >' + item.region + '</td>' : ''}
+                    ${'<td>' + item.sale.join('</td><td>') + '</td>'}
+                    </tr>                 
+                    `;
+                } else if (numOfCheckedRegion > 1 && numOfCheckedProduct > 1) {
+                    tdes +=
+                        `
+                    <tr>
+                    ${!isTheSame ? '<td rowspan=' + count(data, item.product, 'product') + ' >' + item.product + '</td>' : ''}
+                    <td>${item.region}</td>
+                    ${'<td>' + item.sale.join('</td><td>') + '</td>'}
+                    </tr>                 
+                    `;
+                    lastItem = item;
+                    isTheSame = false;
+                }
+                isFirst = false;
+
+
+            }
+
+            html = thes + tdes;
+            document.querySelector("#table").innerHTML = html;
+
+        }
+
+        let notify = (function () {
+            //object is a function with closure
+            let storage = {};
+            return function (key, value) {
+                storage[key] = value;
+
+                let fixedData = dataOfSource();
+
+                for (let k in storage) {
+                    if (storage.hasOwnProperty(k)) {
+                        fixedData = fixedData.filter(item => {
+                            for (let checkedValue of storage[k]) {
+                                if (checkedValue === item[k]) {
+                                    return true;
+                                }
+                            }
+                            return false;
+                        });
+                    }
+                }
+                renderTable(fixedData);
+            }
+        })();
+
+        function main() {
+
+            renderTable(dataOfSource());
+
+            function logicOfCheckbox(key) {
+
+                return function (e) {
+                    //e => event
+                    const checkAll = 'all';
+                    let targetCheckbox = e.target;
+                    let checkboxWrapEl = this;
+                    let AllCheckboxes = checkboxWrapEl.querySelectorAll('.item');
+                    let checkboxAllEl = checkboxWrapEl.querySelector(".all");
+                    let checkedValue = [];
+
+                    if (targetCheckbox.type === 'checkbox') {
+                        if (targetCheckbox.dataset.value === checkAll) { //首先判断是否是全选按钮
+                            for (let cb of AllCheckboxes) {
+                                // console.log(targetCheckbox.checked, document.querySelectorAll('.region-wrap .item'));
+                                if (targetCheckbox.checked) {
+                                    cb.checked = true;
+                                } else {
+                                    cb.checked = false;
+                                }
+                            }
+                        } else {
+                            let isAllChecked = true;
+                            for (let cb of AllCheckboxes) {
+                                if (cb.checked === false) {
+                                    isAllChecked = false;
+                                    break;
+                                }
+                            }
+                            checkboxAllEl.checked = isAllChecked;
+                        }
+                        //获得勾选的数据
+                        for (let cb of AllCheckboxes) {
+                            if (cb.checked === true) {
+                                checkedValue.push(cb.parentElement.textContent.trim())
+                            }
+                        }
+                        notify(key, checkedValue);
+                    }
+
+
+                }
+            }
+
+            document.querySelector(".region-wrap").onchange = logicOfCheckbox('region');
+            document.querySelector('.product-wrap').onchange = logicOfCheckbox('product');
+        }
+
+
+        main();
+    </script>
+</body>
+
+</html>
