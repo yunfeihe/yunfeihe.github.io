@@ -217,20 +217,24 @@
                         if (targetCheckbox.dataset.value === checkAll) { //首先判断是否是全选按钮
                             for (let cb of AllCheckboxes) {
                                 // console.log(targetCheckbox.checked, document.querySelectorAll('.region-wrap .item'));
-                                if (targetCheckbox.checked) {
+                                if (targetCheckbox.checked) {   //targetCheckbox = 全选checkbox
                                     cb.checked = true;
                                 } else {
                                     cb.checked = false;
+                                    //至少留一个不为空，这个写法很不好，但是开始没考虑这个需求，现在不想大改代码了;
+                                    AllCheckboxes[0].checked = true;
                                 }
                             }
                         } else {
                             let isAllChecked = true;
+                            let checkedboxCount = AllCheckboxes.length;
                             for (let cb of AllCheckboxes) {
                                 if (cb.checked === false) {
                                     isAllChecked = false;
-                                    break;
+                                    checkedboxCount--;
                                 }
                             }
+                            checkedboxCount === 0 ? AllCheckboxes[0].checked = true : '';
                             checkboxAllEl.checked = isAllChecked;
                         }
                         //获得勾选的数据
