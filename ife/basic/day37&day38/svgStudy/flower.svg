@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    
+    <ellipse rx="40" ry="15" cx="100" cy="200" fill="white" stroke="black"/>
+    <line x1="60" x2="70" y1="200" y2="240" stroke="black"/>
+    <line x1="140" x2="130" y1="200" y2="240" stroke="black"/>
+    <ellipse rx="30" ry="12" cx="100" cy="240" fill="white" stroke="black"/>
+
+
+    <line x1="100" x2="100" y1="100" y2="200" stroke="black" 
+    stroke-width="2"
+    />
+
+    <circle cx="100" cy="100" r="20" fill="red"/>
+
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" />
+    
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" 
+    transform="rotate(45, 100, 100)"
+    />
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" 
+    transform="rotate(90, 100, 100)"
+    />
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" 
+    transform="rotate(135, 100, 100)"
+    />
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" 
+    transform="rotate(180, 100, 100)"
+    />
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" 
+    transform="rotate(225, 100, 100)"
+    />
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" 
+    transform="rotate(270, 100, 100)"
+    />
+    <ellipse rx="15" fill="pink" ry="25" cx="100" cy="60" 
+    transform="rotate(315, 100, 100)"
+    />
+
+
+
+
+</svg>
