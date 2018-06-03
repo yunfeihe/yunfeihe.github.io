@@ -141,7 +141,7 @@ function renderTable(data) {
                 `
             <tr>
             <td class="product" >${item.product}</td>
-            ${isFirst ? '<tdclass="region" rowspan=' + count(data, data[0].region, 'region') + ' >' + item.region + '</td>' : ''}
+            ${isFirst ? '<td class="region" rowspan=' + count(data, data[0].region, 'region') + ' >' + item.region + '</td>' : ''}
             ${'<td class="month">' + item.sale.join('</td><td class="month">') + '</td>'}
             </tr>                 
             `;
@@ -170,7 +170,6 @@ function renderTable(data) {
     document.querySelectorAll('td').forEach(function (tdEl) {
         tdEl.addEventListener('click', (e) => {
             if(tdEl.querySelector("input") === null) {
-                console.log('i. e', tdEl.querySelector("input"))
                 if(lastTd !== null && e.target !== lastTd) {
                     let t = lastTd.querySelectorAll('button')[1];
                     t && t.click();
@@ -202,7 +201,6 @@ function renderTable(data) {
                 }
 
                 saveBtn.onclick = function(e) {
-                    console.log(tdEl);
                     let temp = document.createElement('div');
                     temp.textContent = tdEl.querySelector('input').value;
                     let editedValue = temp.innerHTML;
@@ -259,15 +257,15 @@ let notify = (function () {
 })();
 
 
-function logicOfCheckbox(key) {
-    return function (e) {
+function logicOfCheckbox(e) {
+
         //e => event
         const checkAll = 'all';
         let targetCheckbox = e.target;
         let checkboxWrapEl = this;
         let AllCheckboxes = checkboxWrapEl.querySelectorAll('.item');
         let checkboxAllEl = checkboxWrapEl.querySelector(".all");
-        let checkedValue = [];
+        // let checkedValue = [];
 
         if (targetCheckbox.type === 'checkbox') {
             if (targetCheckbox.dataset.value === checkAll) { //首先判断是否是全选按钮
@@ -280,6 +278,8 @@ function logicOfCheckbox(key) {
                         AllCheckboxes[0].checked = true;
                     }
                 }
+
+            
             } else {
                 let isAllChecked = true;
                 let checkedboxCount = AllCheckboxes.length;
@@ -292,39 +292,81 @@ function logicOfCheckbox(key) {
                 checkedboxCount === 0 ? AllCheckboxes[0].checked = true : '';
                 checkboxAllEl.checked = isAllChecked;
             }
-            //获得勾选的数据
-            for (let cb of AllCheckboxes) {
-                if (cb.checked === true) {
-                    checkedValue.push(cb.parentElement.textContent.trim())
-                }
-            }
-            notify(key, checkedValue);
+            changeHash();       
         }
+    
+}
 
-
+function changeHash() {
+    let regiones = document.querySelector(".region-wrap").querySelectorAll(".item");
+    let products = document.querySelector(".product-wrap").querySelectorAll(".item");
+    let operations = [];
+    
+    for(let checkboxes of [regiones, products]) {
+        let state = [];
+        for(let cb of checkboxes) {
+            cb.checked ? state.push(true) : state.push(false);
+        }
+        operations.push(state);
     }
+    location.hash = 'op-' + JSON.stringify(operations);
+    renderByHash();
 }
 
 
+
+function renderByHash(e) {
+    // let data = dataOfSource();
+    let hashWithoutSharp = location.hash.slice(1);
+    let operations = [];
+    if(hashWithoutSharp.indexOf('-') > -1) {
+        console.log("0");
+        operations = JSON.parse(hashWithoutSharp.split('-')[1])  || JSON.parse('[[true,true,true],[true,true,true]]');
+        console.log("ops", operations);
+        
+        } else {
+            operations = JSON.parse('[[true,true,true],[true,true,true]]');
+            document.querySelectorAll('.all').forEach(item => item.checked = true)
+        }
+
+        let regionWrap = document.querySelector(".region-wrap");
+        let productWrap = document.querySelector(".product-wrap");
+        let regiones = regionWrap.querySelectorAll(".item");
+        let products = productWrap.querySelectorAll(".item");
+
+        let checkValues = {};
+        [regiones, products].forEach(function(checkboxes, cbesIndex) {
+            checkboxes.forEach(function(cb, cbIndex) {
+                console.log();
+                let key = cb.parentElement.parentElement.className.split('-')[0];
+                if(checkValues[key] === undefined) {
+                    checkValues[key] = [];
+                }
+                cb.checked = operations[cbesIndex][cbIndex];
+                if(cb.checked) {
+                    checkValues[key].push(cb.parentElement.textContent.trim());
+                }
+            })
+        });
+        
+        for(let key in checkValues) {
+            if(checkValues.hasOwnProperty(key)) {
+                notify(key, checkValues[key]);
+            }
+        }
+    }
+
+
 function main() {
-    // drawBarGraphBySvg(data);
-    // drawBarGraphByCanvas(data);
-    // graph.drawLineGraphByCanvas(data);
-    // graph.drawLineGraphByCanvas(data2);
-
-
-    document.querySelectorAll('.item, .all').forEach(function(item) {
-        item.checked = true;
-    });
-
-    renderTable(dataOfSource());
-
-    document.querySelector(".region-wrap").onchange = logicOfCheckbox('region');
-    document.querySelector('.product-wrap').onchange = logicOfCheckbox('product');
+    renderByHash();    
+    window.onhashchange = function(e) {
+        renderByHash(e);
+    }
+    document.querySelector(".region-wrap").onchange = logicOfCheckbox;
+    document.querySelector('.product-wrap').onchange = logicOfCheckbox;
 
     let current = [null];
     document.querySelector("#table").onmouseover = function (e) {
-        // console.log(e, e.target, e.target.parentElement);
         const NOT_EXIST = -1;
         let targetRow = e.target.parentElement.nodeName === 'TR' ? e.target.parentElement : -1;
         if (!(targetRow === NOT_EXIST) && !targetRow.classList.contains("title")) {
@@ -351,7 +393,6 @@ function main() {
                 isTheRowChanged = false;
             } else {
                 //暂时放在这里处理数据了
-                console.log("not change")
             }
 
         } else {
@@ -365,7 +406,6 @@ function main() {
     }
 
     document.querySelector("#table").onmouseout = function (e) {
-        // console.log(e, e.target, e.target.parentElement);
         const NOT_EXIST = -1;
         let targetRow = e.target.parentElement.nodeName === 'TR' ? e.target.parentElement : -1;
         if (!(targetRow === NOT_EXIST) && !targetRow.classList.contains("title")) {

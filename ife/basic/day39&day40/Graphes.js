@@ -315,7 +315,7 @@ function drawMulLineGraphByCanvas(datas, element = document.body) {
         lines.push(points);
     }
     
-    console.log("lines", lines);
+    // console.log("lines", lines);
     
     for(let line of lines) {
         let lastPoint = null;
