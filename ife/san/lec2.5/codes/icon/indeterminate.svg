@@ -5,6 +5,6 @@
     enable-background="new 0 0 1000 1000" xml:space="preserve">
     <metadata> Svg Vector Icons : http://www.sfont.cn </metadata>
     <g>
-        <path fill="grey" d="M10,10v980h980V10H10z M928.8,928.8H71.3V71.3h857.5V928.8z M255,255h490v490H255V255z" />
+        <path fill="black" d="M10,10v980h980V10H10z M928.8,928.8H71.3V71.3h857.5V928.8z M255,255h490v490H255V255z" />
     </g>
 </svg>
