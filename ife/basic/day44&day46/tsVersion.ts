@@ -218,8 +218,8 @@ function main() {
     }, 2000);
 
 
-    let nameEl = document.querySelector("#name");
-    let dishEl = document.querySelector("#dish");
+    let nameEl:any = document.querySelector("#name");
+    let dishEl: any = document.querySelector("#dish");
     document.querySelector("#order").addEventListener('click', function() {
         let name = nameEl.value;
         let dish = dishEl.value;
