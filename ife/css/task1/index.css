@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+.wrap {
+  margin: 0 auto;
+  text-align: center;
+}
+.wrap .style-wrap #target {
+  transition: ease-in 1s;
+  display: inline-block;
+  position: relative;
+}
+.wrap .style-wrap #target.styled {
+  color: blue;
+}
+.wrap .style-wrap #target.styled::after {
+  width: 100%;
+  transform: scaleX(1);
+}
+.wrap .style-wrap #target::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: -5px;
+  background-color: blue;
+  transition: transform 1s;
+  transform: scaleX(0);
+  border-radius: 5px;
+}

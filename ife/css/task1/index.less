@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+}
+
+
+.wrap {
+    margin: 0 auto;
+    text-align: center;
+    
+    .style-wrap {
+        #target {
+            @time: 1s;
+            transition:ease-in @time;
+            display: inline-block;
+            position: relative;
+            &.styled {
+                color: blue;
+                &::after {
+                    width: 100%;
+                    // transform: translateX(-50%);
+                    transform: scaleX(1)
+                }
+            }
+            &::after {
+                content: '';
+                display: block;
+                height: 4px;
+                width: 100%;
+                position: absolute;
+                bottom: -5px;
+                background-color: blue;
+                transition:transform @time;
+                transform: scaleX(0);
+                // transform-origin:50% 0;
+                border-radius: 5px;
+            }
+        }
+    }
+    
+}
+
