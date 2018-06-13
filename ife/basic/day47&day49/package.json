@@ -1,0 +1,14 @@
+{
+  "name": "ife",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
