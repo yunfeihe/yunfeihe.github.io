@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="本文的目的旨在记录js红宝书重要但不经常使用的知识要点。  script元素相关 对于带有src属性的script元素，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。 script的defer属性，如果一个script元素其defer属性被指定，脚本会被立即下载但是延迟到页面加载完成后再执行。 html5中script元素定">
+  <meta name="description" content="本文的目的旨在记录js红宝书重要但不经常使用的知识要点。  script元素相关 对于 带有src属性的script元素，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。 script的 defer 属性，如果一个script元素其defer属性被指定，脚本会被 立即下载 但是 延迟 到页面加载完成后再执行。 html5中sc">
 <meta name="keywords" content="javascript,编程笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《javascript高级程序设计》阅读笔记">
 <meta property="og:url" content="http://yunfeihe.me/blog/2018/07/21/《javascript高级程序设计》阅读笔记/index.html">
 <meta property="og:site_name" content="YunfeiHe的个人博客">
-<meta property="og:description" content="本文的目的旨在记录js红宝书重要但不经常使用的知识要点。  script元素相关 对于带有src属性的script元素，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。 script的defer属性，如果一个script元素其defer属性被指定，脚本会被立即下载但是延迟到页面加载完成后再执行。 html5中script元素定">
+<meta property="og:description" content="本文的目的旨在记录js红宝书重要但不经常使用的知识要点。  script元素相关 对于 带有src属性的script元素，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。 script的 defer 属性，如果一个script元素其defer属性被指定，脚本会被 立即下载 但是 延迟 到页面加载完成后再执行。 html5中sc">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-21T04:13:27.729Z">
+<meta property="og:updated_time" content="2018-07-21T12:57:38.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《javascript高级程序设计》阅读笔记">
-<meta name="twitter:description" content="本文的目的旨在记录js红宝书重要但不经常使用的知识要点。  script元素相关 对于带有src属性的script元素，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。 script的defer属性，如果一个script元素其defer属性被指定，脚本会被立即下载但是延迟到页面加载完成后再执行。 html5中script元素定">
+<meta name="twitter:description" content="本文的目的旨在记录js红宝书重要但不经常使用的知识要点。  script元素相关 对于 带有src属性的script元素，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。 script的 defer 属性，如果一个script元素其defer属性被指定，脚本会被 立即下载 但是 延迟 到页面加载完成后再执行。 html5中sc">
 
 
 
@@ -339,7 +339,7 @@
                 
               
 
-              <time title="创建时间：2018-07-21 11:41:12 / 修改时间：12:13:27" itemprop="dateCreated datePublished" datetime="2018-07-21T11:41:12+08:00">2018-07-21</time>
+              <time title="创建时间：2018-07-21 11:41:12 / 修改时间：20:57:38" itemprop="dateCreated datePublished" datetime="2018-07-21T11:41:12+08:00">2018-07-21</time>
             
 
             
@@ -398,12 +398,15 @@
         <p>本文的目的旨在记录js红宝书重要但不经常使用的知识要点。</p>
 <hr>
 <h2 id="script元素相关"><a href="#script元素相关" class="headerlink" title="script元素相关"></a>script元素相关</h2><ul>
-<li>对于<strong>带有src属性的script元素</strong>，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。</li>
-<li>script的<strong>defer</strong>属性，如果一个script元素其defer属性被指定，脚本会被<strong>立即下载</strong>但是<strong>延迟</strong>到页面加载完成后再执行。</li>
-<li>html5中script元素定义了<strong>async</strong>属性，效果类似defer属性，只适用于外部脚本文件，且不保证脚本的执行顺序遵顼其出现的顺序。</li>
+<li>对于 <strong>带有src属性的script元素</strong>，浏览器解析的时候会忽略script内部的js代码。也就是说只会下载执行外部脚本文件，忽略嵌入script元素内部的代码。</li>
+<li>script的 <strong>defer</strong> 属性，如果一个script元素其defer属性被指定，脚本会被 <strong>立即下载</strong> 但是 <strong>延迟</strong> 到页面加载完成后再执行。</li>
+<li>html5中script元素定义了 <strong>async</strong> 属性，效果类似defer属性，只适用于外部脚本文件，且不保证脚本的执行顺序遵顼其出现的顺序。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ps:defer和async属性的用法</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> <span class="keyword">async</span> src=<span class="string">"./foo.js"</span>&gt;&lt;/script&gt;       </span><br><span class="line"><span class="comment">//出现即为真值</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> defer src=<span class="string">"./foo.js"</span>&gt;&lt;/script&gt; </span><br><span class="line"><span class="comment">//同上</span></span><br></pre></td></tr></table></figure>
-<h2 id="文档模式"><a href="#文档模式" class="headerlink" title="文档模式"></a>文档模式</h2>
+<h2 id="文档模式"><a href="#文档模式" class="headerlink" title="文档模式"></a>文档模式</h2><p>文档模式也就是html文件第一行的\&lt;!DOCTYPE&gt;。文档模式早期由IE引入，用来规范浏览器的行为(主要时解析css方面的)。分为 <strong>混杂模式(怪异模式)</strong> 和 <strong>标准模式</strong>，后来其他浏览器也引入了文档模式的特性。重点在于如果 <strong>html文件如果开头没有声明文档类型，则默认启用混杂模式</strong> 所以写网页时一定要带着\&lt;!DOCTYPE&gt;，不然会碰到一些怪异的错误。</p>
+<h2 id="带名字的匿名函数"><a href="#带名字的匿名函数" class="headerlink" title="带名字的匿名函数"></a>带名字的匿名函数</h2><p>请思考以下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(foo)&#125;;</span><br><span class="line">foo(); <span class="comment">// =&gt; 找不到变量名</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(foo)&#125;);</span><br><span class="line">foo(); <span class="comment">// =&gt; 结果同上</span></span><br></pre></td></tr></table></figure></p>
+<p>以上两个语句都是函数表达式而非函数声明，当使用函数表达式对函数进行命名时，这个名字无法被外部访问到只存在与函数内部，与 <strong>arguments.callee</strong> 的作用类似。但是在strict模式下，callee属性被禁用，因此函数表达式这个特性就有用武之处了。此外，对于递归函数，采用此种方法调用自身，永远不用担心自身的函数名被覆盖或删除导致出错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">recurtion</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    recurtion();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> foo1 = recurtion;</span><br><span class="line"><span class="keyword">delete</span> recurtion;</span><br><span class="line">foo1(); <span class="comment">//=&gt;报错 recurtion未定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> foo2 = <span class="function"><span class="keyword">function</span> <span class="title">recurtion</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    recurtion();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">delete</span> recurtion;</span><br><span class="line">foo2(); <span class="comment">// =&gt;可以正常调用</span></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -568,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#script元素相关"><span class="nav-number">1.</span> <span class="nav-text">script元素相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档模式"><span class="nav-number">2.</span> <span class="nav-text">文档模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#script元素相关"><span class="nav-number">1.</span> <span class="nav-text">script元素相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档模式"><span class="nav-number">2.</span> <span class="nav-text">文档模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带名字的匿名函数"><span class="nav-number">3.</span> <span class="nav-text">带名字的匿名函数</span></a></li></ol></div>
             
 
           </div>
