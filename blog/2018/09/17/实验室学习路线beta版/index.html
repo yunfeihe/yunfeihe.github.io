@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前置  目标人群：本学习路线主要针对完全没有编程经验，或者仅仅具有基础编程经验 目的：通过完成以下其中一条学习路线你将会得到达成以下目标 掌握大部分编程语言的共性，可以快速上手任何新接触的语言 对编程语言在计算机体系中所占的位置有个总览的认识 打下良好的编程基础，学会使用编程来解决问题     主要 随意从一条路线开始，反正都要学，学完一条学另一条，最后把最终任务完成，恭喜你就入门了。  阶段一-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实验室学习路线beta版">
+<meta property="og:url" content="http://yunfeihe.me/blog/2018/09/17/实验室学习路线beta版/index.html">
+<meta property="og:site_name" content="YunfeiHe的个人博客">
+<meta property="og:description" content="前置  目标人群：本学习路线主要针对完全没有编程经验，或者仅仅具有基础编程经验 目的：通过完成以下其中一条学习路线你将会得到达成以下目标 掌握大部分编程语言的共性，可以快速上手任何新接触的语言 对编程语言在计算机体系中所占的位置有个总览的认识 打下良好的编程基础，学会使用编程来解决问题     主要 随意从一条路线开始，反正都要学，学完一条学另一条，最后把最终任务完成，恭喜你就入门了。  阶段一-">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-17T11:16:44.793Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实验室学习路线beta版">
+<meta name="twitter:description" content="前置  目标人群：本学习路线主要针对完全没有编程经验，或者仅仅具有基础编程经验 目的：通过完成以下其中一条学习路线你将会得到达成以下目标 掌握大部分编程语言的共性，可以快速上手任何新接触的语言 对编程语言在计算机体系中所占的位置有个总览的认识 打下良好的编程基础，学会使用编程来解决问题     主要 随意从一条路线开始，反正都要学，学完一条学另一条，最后把最终任务完成，恭喜你就入门了。  阶段一-">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yunfeihe.me/blog/2018/09/17/实验室学习路线beta版/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>实验室学习路线beta版 | YunfeiHe的个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YunfeiHe的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/blog/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/blog/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yunfeihe.me/blog/blog/2018/09/17/实验室学习路线beta版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunfei He">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunfeiHe的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">实验室学习路线beta版
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-17 19:15:08 / 修改时间：19:16:44" itemprop="dateCreated datePublished" datetime="2018-09-17T19:15:08+08:00">2018-09-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h2><blockquote>
+<ul>
+<li>目标人群：本学习路线主要针对<strong>完全没有编程经验</strong>，或者仅仅<strong>具有基础编程经验</strong></li>
+<li>目的：通过完成以下其中一条学习路线你将会得到达成以下目标<ul>
+<li>掌握大部分编程语言的<strong>共性</strong>，可以快速上手任何新接触的语言</li>
+<li>对编程语言在计算机体系中所占的位置有个总览的认识</li>
+<li>打下良好的编程基础，学会使用编程来解决问题</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="主要"><a href="#主要" class="headerlink" title="主要"></a>主要</h2><blockquote>
+<p>随意从一条路线开始，反正都要学，学完一条学另一条，最后把最终任务完成，恭喜你就入门了。</p>
+</blockquote>
+<h3 id="阶段一-学习编程语言"><a href="#阶段一-学习编程语言" class="headerlink" title="阶段一-学习编程语言"></a>阶段一-学习编程语言</h3><hr>
+<blockquote>
+<p>学习方式：先完成入门任务，然后学习python路线，再学习js路线，最后完成最终任务。</p>
+</blockquote>
+<h3 id="1-入门任务"><a href="#1-入门任务" class="headerlink" title="1 入门任务"></a>1 入门任务</h3><ul>
+<li><p>阅读编程语言基础-<a href="http://www.yinwang.org/blog-cn/2018/04/13/csbook-chapter1" target="_blank" rel="noopener">文章链接</a> <a href="http://www.360doc.com/content/18/0429/22/1437135_749769645.shtml" target="_blank" rel="noopener">备份</a>-本文的目的旨在给予你一个良好的对编程语言以及其感念的理解。(至于交钱的问题，大家量力而行)</p>
+</li>
+<li><p>阅读《如何掌握所有的程序语言》-<a href="https://www.douban.com/note/651108002/?type=like" target="_blank" rel="noopener">文章链接</a>-新人总是被选择什么语言困惑，这里先看看这篇文章有个大概的理解，以后学的越多理解越深。</p>
+</li>
+</ul>
+<hr>
+<h4 id="2-python3路线-python2和python3基本没有区别，不要纠结于此"><a href="#2-python3路线-python2和python3基本没有区别，不要纠结于此" class="headerlink" title="2 python3路线(python2和python3基本没有区别，不要纠结于此)"></a>2 python3路线(python2和python3基本没有区别，不要纠结于此)</h4><ul>
+<li><p>python3入门学习(直到 <strong>看完高级特性 切片</strong> 即可，请勿多看，以免打击自己)-0-<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="noopener">课程链接</a>-本课程主要是为了没有编程经验的人先熟悉下各种名词(如果你对学习本课程还是很吃力，请放心，学下去)</p>
+</li>
+<li><p>学习python基础(直到看完教程 <strong>64</strong> 即可)-<a href="https://www.bilibili.com/video/av4050443/?p=1" target="_blank" rel="noopener">课程链接</a>-本课程目标旨在教授python的基本概念和相关特性。学完本课程后你应该达到的程度是：</p>
+<ol>
+<li>对python的常用语法有个 <strong>熟练</strong> 的认识和能够不出大错的 <strong>运用</strong></li>
+<li>能够 <strong>看懂</strong> 别人写的代码</li>
+<li>能够在给予指导的情况下写出需要的代码<br><br></li>
+</ol>
+</li>
+<li><p>学习使用IDE(集成开发环境)-<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>-一个良好的IDE能够起到巨大的帮助，学到本课程请联系我，我会单独说明，因为还没有公共的课程。</p>
+</li>
+<li><p>阅读《如何掌握所有的程序语言》-<a href="http://www.yinwang.org/blog-cn/2017/07/06/master-pl" target="_blank" rel="noopener">课程链接</a>-恭喜你，在完成以上课程以后，请再复习下这篇文章，试者结合python来理解作者想表达的意思，放心，当你学了第二门语言以后，会有更深的感悟。</p>
+</li>
+<li><p>学习python的方方面面-<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="noopener">课程链接</a>-现在就从头看到底吧，<strong>注意</strong> 尽管你已经接受了相关训练但是还会有很多地方看不懂， <strong>不要担心</strong> ，你看不懂是因为有其他的背景知识你还没学，以后会学的。但是你要对python本身有个熟练的理解和运用。</p>
+</li>
+<li><p>该 <strong>写</strong> 个博客了-<a href="https://www.zmrenwu.com/post/2/" target="_blank" rel="noopener">课程链接</a>-学了那么长时间python该写些东西了。本教程通俗易懂，写出这个博客程序，本路线到此结束。PS:</p>
+<ol>
+<li>最终你的博客程序要完成评论功能，其后的教程章节，不要求继续学习。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="3-javascript路线"><a href="#3-javascript路线" class="headerlink" title="3 javascript路线"></a>3 javascript路线</h4><ul>
+<li><p>阅读书籍《代码之髓：编程语言核心概念》-01-<a href="">下载链接</a>-不要被本书的名字吓到，此书的目的就是帮你理解编程语言的的重要概念(变量，while，if，class等等)，并且通过不同的语言举例子。</p>
+</li>
+<li><p>学习html和css(直到看完教程 <strong>16</strong> 即可)–<a href="https://www.bilibili.com/video/av5862916/?p=16" target="_blank" rel="noopener">课程链接</a>-基础学习</p>
+</li>
+<li><p>学习javascript-01-<a href="">未定</a>-未定</p>
+</li>
+<li><p>更多的html，css和javascript-<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web" target="_blank" rel="noopener">教程链接</a>-本教程内容是对html，css和js的一次复习，但也是一个新的征程。本课程教授了一些计算机的常识内容，对于没接触过计算机的人来说，可能有点吃力，但是努力学习吧，<strong>接下来我们要开始做游戏了！</strong></p>
+</li>
+<li><p>打砖块1到4-01-<a href="http://space.bilibili.com/39066904/#/channel/detail?cid=21254" target="_blank" rel="noopener">教程链接</a>-请学习所给链接中视频1到视频4，并根据视频完成一个弹球游戏</p>
+</li>
+</ul>
+<hr>
+<h4 id="4-通用"><a href="#4-通用" class="headerlink" title="4 通用"></a>4 通用</h4><ul>
+<li>阅读《如何掌握所有的程序语言》-01-<a href="http://www.yinwang.org/blog-cn/2017/07/06/master-pl" target="_blank" rel="noopener">课程链接</a>-恭喜你，在完成以上课程以后，你已经学会了使用python和js两门语言，相信你此时会对作者想表达的含义有了更深的理解，请抱着这种理解来面对以后语言学习之路吧。</li>
+</ul>
+<ul>
+<li><p>(<strong>最终任务</strong>)完成《sicp in python》-01-<a href="https://legacy.gitbook.com/book/wizardforcel/sicp-py/details" target="_blank" rel="noopener">阅读链接</a>-本书是神书sicp的python改写版本，虽然难度和深度降低了一些，但是其中迷人的精华部分还是值得人去努力阅读的。完成本书后的，基本上可以说是在编程语言上(谦虚的说)入了门。(本书着实有一定的难度，对于最后要求实现一个语言解释器不作必须要求，但是计算器必须完成)</p>
+</li>
+<li><p>(可选)sicp公开课-<a href="https://www.bilibili.com/video/av8515129?from=search&amp;seid=5333695264127699869" target="_blank" rel="noopener">视频地址</a>-本课是sicp作者给惠普公司的培训视频，内容是sicp精华部分的讲解，即使时隔多年，依然是经典中的经典。(如果你看的晕头转向，请不要怀疑自己的智商，因为我第一次看也是这样，本课我看了很多遍，每次看都有新的收获。注意观看本课时请一定专注，不要开小差，否则一个走神可能就听不懂后面的内容)</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/09/13/foo/" rel="next" title="foo">
+                <i class="fa fa-chevron-left"></i> foo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yunfei He</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前置"><span class="nav-number">1.</span> <span class="nav-text">前置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要"><span class="nav-number">2.</span> <span class="nav-text">主要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阶段一-学习编程语言"><span class="nav-number">2.1.</span> <span class="nav-text">阶段一-学习编程语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-入门任务"><span class="nav-number">2.2.</span> <span class="nav-text">1 入门任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-python3路线-python2和python3基本没有区别，不要纠结于此"><span class="nav-number">2.2.1.</span> <span class="nav-text">2 python3路线(python2和python3基本没有区别，不要纠结于此)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-javascript路线"><span class="nav-number">2.2.2.</span> <span class="nav-text">3 javascript路线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-通用"><span class="nav-number">2.2.3.</span> <span class="nav-text">4 通用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yunfei He</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
