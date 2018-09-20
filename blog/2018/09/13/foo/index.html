@@ -108,17 +108,14 @@
 
 
 
-  <meta name="description" content="按降序输出数值123456789101112131415161718#include &amp;lt;stdio.h&amp;gt;int main() &amp;#123;	int x, y, z;	scanf(&quot;%d %d %d&quot;, &amp;amp;x, &amp;amp;y, &amp;amp;z);	int max = x &amp;gt; y ? x : y;	max = max &amp;gt; z ? max : z; //得到最大值	int">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="foo">
 <meta property="og:url" content="http://yunfeihe.me/blog/2018/09/13/foo/index.html">
 <meta property="og:site_name" content="YunfeiHe的个人博客">
-<meta property="og:description" content="按降序输出数值123456789101112131415161718#include &amp;lt;stdio.h&amp;gt;int main() &amp;#123;	int x, y, z;	scanf(&quot;%d %d %d&quot;, &amp;amp;x, &amp;amp;y, &amp;amp;z);	int max = x &amp;gt; y ? x : y;	max = max &amp;gt; z ? max : z; //得到最大值	int">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-13T01:21:36.814Z">
+<meta property="og:updated_time" content="2018-09-18T12:33:08.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="foo">
-<meta name="twitter:description" content="按降序输出数值123456789101112131415161718#include &amp;lt;stdio.h&amp;gt;int main() &amp;#123;	int x, y, z;	scanf(&quot;%d %d %d&quot;, &amp;amp;x, &amp;amp;y, &amp;amp;z);	int max = x &amp;gt; y ? x : y;	max = max &amp;gt; z ? max : z; //得到最大值	int">
 
 
 
@@ -338,12 +335,24 @@
                 
               
 
-              <time title="创建时间：2018-09-13 08:46:21 / 修改时间：09:21:36" itemprop="dateCreated datePublished" datetime="2018-09-13T08:46:21+08:00">2018-09-13</time>
+              <time title="创建时间：2018-09-13 08:46:21" itemprop="dateCreated datePublished" datetime="2018-09-13T08:46:21+08:00">2018-09-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-18 20:33:08" itemprop="dateModified" datetime="2018-09-18T20:33:08+08:00">2018-09-18</time>
               
             
           </span>
@@ -376,13 +385,7 @@
       
 
       
-        <h2 id="按降序输出数值"><a href="#按降序输出数值" class="headerlink" title="按降序输出数值"></a>按降序输出数值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x, y, z;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">	<span class="keyword">int</span> max = x &gt; y ? x : y;</span><br><span class="line">	max = max &gt; z ? max : z; <span class="comment">//得到最大值</span></span><br><span class="line">	<span class="keyword">int</span> min = x &gt; y ? y : x;</span><br><span class="line">	min = min &gt; z ? z : min; <span class="comment">//得到最小值</span></span><br><span class="line">	<span class="keyword">int</span> mid = <span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 得到中间值 </span></span><br><span class="line">	mid = x &gt; min &amp;&amp; x &lt; max ? x : mid;</span><br><span class="line">	mid = y &gt; min &amp;&amp; y &lt; max ? y : mid;</span><br><span class="line">	mid = z &gt; min &amp;&amp; z &lt; max ? z : mid;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>, max, mid, min);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>* <span class="title">makeArray</span><span class="params">(<span class="keyword">int</span> length, <span class="keyword">int</span> bytes)</span></span>;</span><br><span class="line">	<span class="keyword">int</span>* aIntArray = (<span class="keyword">int</span>*) makeArray(<span class="number">10</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	aIntArray[<span class="number">9</span>] = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"num: %d"</span>, aIntArray[<span class="number">9</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">makeArray</span><span class="params">(<span class="keyword">int</span> length, <span class="keyword">int</span> bytes)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">malloc</span>(bytes * length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> uid;</span><br><span class="line">&#125; Student;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	Student s;</span><br><span class="line">	<span class="built_in">strcpy</span>(s.name, <span class="string">"jack"</span>);</span><br><span class="line">	s.uid = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Student %s with uid: %d"</span>, s.name, s.uid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
       
     </div>
 
@@ -466,17 +469,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -491,25 +485,12 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/blog/categories/index.html">
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
               
 
               
@@ -525,7 +506,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -551,22 +536,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#按降序输出数值"><span class="nav-number">1.</span> <span class="nav-text">按降序输出数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针"><span class="nav-number">3.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体"><span class="nav-number">4.</span> <span class="nav-text">结构体</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
