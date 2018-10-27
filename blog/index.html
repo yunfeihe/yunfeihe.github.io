@@ -293,6 +293,291 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yunfeihe.me/blog/blog/2018/10/27/csapp读后小记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunfei He">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunfeiHe的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/10/27/csapp读后小记/" itemprop="url">
+                  csapp读后小记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-27 20:20:58 / 修改时间：20:55:36" itemprop="dateCreated datePublished" datetime="2018-10-27T20:20:58+08:00">2018-10-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="更好的理解c语言指针"><a href="#更好的理解c语言指针" class="headerlink" title="更好的理解c语言指针"></a>更好的理解c语言指针</h2><p><strong>指针</strong>更加通用或者说抽象的意义是<strong>访问所指向的一个途径</strong>，在这种含义下任何语言都有指针，拿java来说，java的每一个变量都可以说是一个指针。但我要谈的是c语言里的指针，有着更加实际物理层面意义上的指针。对于c语言，<em>我们常说一个指针存储的是一个变量的<strong>地址</strong>，而不是这个变量实际的值</em>，而针对这段斜体文字，我来加以分析说明，以期待能更好帮助读者在底层上理解指针的含义。</p>
+<ul>
+<li>指针也是一个<strong>变量</strong></li>
+<li>指针的<strong>类型</strong>可以看作(<strong>实际上不是这样</strong>)是<strong>unsigned int</strong>或<strong>unsigned long</strong>，取决于你电脑的cpu，所以指针的值是一个<strong>无符号整数</strong></li>
+<li>指针的<strong>实际(定义)类型</strong>在底层没有意义，底层不关心指针是char还是int类型，在底层指针表现的像一个<strong>无符号的整数</strong></li>
+<li>指针本身的值，也就是一个无符号的整数，存储在cpu中的<strong>寄存器(可以理解为访问速度远超内存的内存</strong>)</li>
+<li>对程序来说，内存就是一个范围巨大的<strong>一维数组</strong></li>
+<li>指针(一个无符号的整数)就是对内存这个数组的一个<strong>索引</strong>(index)</li>
+<li>foo = *pointer的含义是从寄存器中取出pointer变量的值，也就是指针本身的值，一个无符号整数，然后再访问内存，根据这个值找到某个变量的值，取回赋给foo变量</li>
+<li>至此可以看出，c语言的指针被描述为指向一个变量的地址，无论是再抽象意义上还是实际行为上都是非常精确的</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yunfeihe.me/blog/blog/2018/10/18/什么他妈的叫他妈的async和await关键字/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunfei He">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunfeiHe的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/10/18/什么他妈的叫他妈的async和await关键字/" itemprop="url">
+                  什么他妈的叫他妈的async和await关键字
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-18 19:48:44" itemprop="dateCreated datePublished" datetime="2018-10-18T19:48:44+08:00">2018-10-18</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yunfeihe.me/blog/blog/2018/09/20/变长文字及输入框的居中对其方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -997,7 +1282,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1022,7 +1307,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
